@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace DocTorHouseManger
 {
@@ -44,9 +36,11 @@ namespace DocTorHouseManger
         }
 
         private void DetailButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {   
+        {
             Detail_InformationForm DetailForm = new Detail_InformationForm();
+            DetailForm.Position = danhSachNhanVienBindingSource.Position;
             DetailForm.ShowDialog();
+            DetailForm.Close();
         }
     }
 }

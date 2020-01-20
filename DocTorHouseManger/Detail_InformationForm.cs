@@ -17,6 +17,7 @@ namespace DocTorHouseManger
         public Detail_InformationForm()
         {
             InitializeComponent();
+            
         }
         public int Position { get; set; }
         protected virtual bool IsFileLocked(FileInfo file)
@@ -52,9 +53,10 @@ namespace DocTorHouseManger
 
         private void Detail_InformationForm_Load(object sender, EventArgs e)
         {
+            
             // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
             this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
-
+            danhSachNhanVienBindingSource.Position = this.Position;
         }
     }
    
