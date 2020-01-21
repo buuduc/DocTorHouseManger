@@ -47,7 +47,6 @@
             System.Windows.Forms.Label tenNganHangLabel;
             System.Windows.Forms.Label chiNhanhNganHangLabel;
             System.Windows.Forms.Label ghichuLabel;
-            System.Windows.Forms.Label hinhAnhLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label honNhanLabel;
             System.Windows.Forms.Label viTriCongViecLabel;
@@ -59,6 +58,7 @@
             System.Windows.Forms.Label sDTLabel;
             System.Windows.Forms.Label ngayCapCMNDLabel;
             System.Windows.Forms.Label noiCapCMNDLabel;
+            System.Windows.Forms.Label hinhAnhLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail_InformationForm));
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -83,7 +83,6 @@
             this.sDTTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.honNhanTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.emailTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.hinhAnhTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ghichuTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.chiNhanhNganHangTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tenNganHangTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -114,6 +113,7 @@
             this.maNhanVienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.sTTSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.hoTenLabel2 = new System.Windows.Forms.Label();
+            this.hinhAnhLinkLabel = new System.Windows.Forms.LinkLabel();
             maNhanVienLabel = new System.Windows.Forms.Label();
             sTTLabel = new System.Windows.Forms.Label();
             gioiTinhLabel = new System.Windows.Forms.Label();
@@ -132,7 +132,6 @@
             tenNganHangLabel = new System.Windows.Forms.Label();
             chiNhanhNganHangLabel = new System.Windows.Forms.Label();
             ghichuLabel = new System.Windows.Forms.Label();
-            hinhAnhLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             honNhanLabel = new System.Windows.Forms.Label();
             viTriCongViecLabel = new System.Windows.Forms.Label();
@@ -144,6 +143,7 @@
             sDTLabel = new System.Windows.Forms.Label();
             ngayCapCMNDLabel = new System.Windows.Forms.Label();
             noiCapCMNDLabel = new System.Windows.Forms.Label();
+            hinhAnhLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -170,7 +170,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sDTTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.honNhanTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hinhAnhTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghichuTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiNhanhNganHangTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenNganHangTextEdit.Properties)).BeginInit();
@@ -373,16 +372,6 @@
             ghichuLabel.TabIndex = 12;
             ghichuLabel.Text = "Ghi Chú:";
             // 
-            // hinhAnhLabel
-            // 
-            hinhAnhLabel.AutoSize = true;
-            hinhAnhLabel.Font = new System.Drawing.Font("Tahoma", 11F);
-            hinhAnhLabel.Location = new System.Drawing.Point(64, 431);
-            hinhAnhLabel.Name = "hinhAnhLabel";
-            hinhAnhLabel.Size = new System.Drawing.Size(100, 18);
-            hinhAnhLabel.TabIndex = 14;
-            hinhAnhLabel.Text = "Link Hình Ảnh:";
-            // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
@@ -493,16 +482,26 @@
             noiCapCMNDLabel.TabIndex = 23;
             noiCapCMNDLabel.Text = "Nơi Cấp:";
             // 
+            // hinhAnhLabel1
+            // 
+            hinhAnhLabel1.AutoSize = true;
+            hinhAnhLabel1.Location = new System.Drawing.Point(434, 387);
+            hinhAnhLabel1.Name = "hinhAnhLabel1";
+            hinhAnhLabel1.Size = new System.Drawing.Size(51, 13);
+            hinhAnhLabel1.TabIndex = 38;
+            hinhAnhLabel1.Text = "Link Ảnh:";
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(448, 386);
+            this.simpleButton1.Location = new System.Drawing.Point(441, 408);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(204, 39);
             this.simpleButton1.TabIndex = 35;
             this.simpleButton1.Text = "Choose Picture";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // pictureEdit1
             // 
@@ -513,6 +512,7 @@
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.pictureEdit1.Size = new System.Drawing.Size(225, 210);
             this.pictureEdit1.TabIndex = 34;
+            this.pictureEdit1.DoubleClick += new System.EventHandler(this.pictureEdit1_DoubleClick);
             // 
             // xtraTabControl1
             // 
@@ -693,8 +693,6 @@
             this.xtraTabPage2.Controls.Add(this.honNhanTextEdit);
             this.xtraTabPage2.Controls.Add(emailLabel);
             this.xtraTabPage2.Controls.Add(this.emailTextEdit);
-            this.xtraTabPage2.Controls.Add(hinhAnhLabel);
-            this.xtraTabPage2.Controls.Add(this.hinhAnhTextEdit);
             this.xtraTabPage2.Controls.Add(ghichuLabel);
             this.xtraTabPage2.Controls.Add(this.ghichuTextEdit);
             this.xtraTabPage2.Controls.Add(chiNhanhNganHangLabel);
@@ -768,16 +766,6 @@
             this.emailTextEdit.Properties.Appearance.Options.UseFont = true;
             this.emailTextEdit.Size = new System.Drawing.Size(229, 24);
             this.emailTextEdit.TabIndex = 17;
-            // 
-            // hinhAnhTextEdit
-            // 
-            this.hinhAnhTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.danhSachNhanVienBindingSource, "HinhAnh", true));
-            this.hinhAnhTextEdit.Location = new System.Drawing.Point(168, 428);
-            this.hinhAnhTextEdit.Name = "hinhAnhTextEdit";
-            this.hinhAnhTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.hinhAnhTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.hinhAnhTextEdit.Size = new System.Drawing.Size(229, 24);
-            this.hinhAnhTextEdit.TabIndex = 15;
             // 
             // ghichuTextEdit
             // 
@@ -957,7 +945,7 @@
             this.danhSachNhanVienBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.danhSachNhanVienBindingNavigator.Name = "danhSachNhanVienBindingNavigator";
             this.danhSachNhanVienBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.danhSachNhanVienBindingNavigator.Size = new System.Drawing.Size(678, 25);
+            this.danhSachNhanVienBindingNavigator.Size = new System.Drawing.Size(686, 25);
             this.danhSachNhanVienBindingNavigator.TabIndex = 36;
             this.danhSachNhanVienBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -985,6 +973,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -1063,6 +1052,9 @@
             this.maNhanVienTextEdit.Name = "maNhanVienTextEdit";
             this.maNhanVienTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.maNhanVienTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.maNhanVienTextEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.maNhanVienTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.maNhanVienTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.maNhanVienTextEdit.Size = new System.Drawing.Size(100, 24);
             this.maNhanVienTextEdit.TabIndex = 1;
             // 
@@ -1078,6 +1070,8 @@
             this.sTTSpinEdit.Name = "sTTSpinEdit";
             this.sTTSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.sTTSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.sTTSpinEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.sTTSpinEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.sTTSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sTTSpinEdit.Size = new System.Drawing.Size(100, 24);
@@ -1097,20 +1091,34 @@
             this.hoTenLabel2.Text = "label1";
             this.hoTenLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hinhAnhLinkLabel
+            // 
+            this.hinhAnhLinkLabel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.danhSachNhanVienBindingSource, "HinhAnh", true));
+            this.hinhAnhLinkLabel.Location = new System.Drawing.Point(486, 387);
+            this.hinhAnhLinkLabel.Name = "hinhAnhLinkLabel";
+            this.hinhAnhLinkLabel.Size = new System.Drawing.Size(188, 23);
+            this.hinhAnhLinkLabel.TabIndex = 39;
+            this.hinhAnhLinkLabel.TabStop = true;
+            this.hinhAnhLinkLabel.Text = "linkLabel1";
+            this.hinhAnhLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hinhAnhLinkLabel_LinkClicked);
+            this.hinhAnhLinkLabel.TextChanged += new System.EventHandler(this.hinhAnhLinkLabel_TextChanged);
+            // 
             // Detail_InformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 664);
+            this.ClientSize = new System.Drawing.Size(686, 664);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(hinhAnhLabel1);
+            this.Controls.Add(this.hinhAnhLinkLabel);
             this.Controls.Add(this.hoTenLabel2);
             this.Controls.Add(this.sTTSpinEdit);
             this.Controls.Add(this.maNhanVienTextEdit);
-            this.Controls.Add(this.danhSachNhanVienBindingNavigator);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(sTTLabel);
             this.Controls.Add(maNhanVienLabel);
+            this.Controls.Add(this.danhSachNhanVienBindingNavigator);
             this.Name = "Detail_InformationForm";
             this.Text = "Detail_Information";
             this.Load += new System.EventHandler(this.Detail_InformationForm_Load);
@@ -1142,7 +1150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sDTTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.honNhanTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hinhAnhTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghichuTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiNhanhNganHangTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenNganHangTextEdit.Properties)).EndInit();
@@ -1209,7 +1216,6 @@
         private System.Windows.Forms.Label hoTenLabel2;
         private DevExpress.XtraEditors.TextEdit honNhanTextEdit;
         private DevExpress.XtraEditors.TextEdit emailTextEdit;
-        private DevExpress.XtraEditors.TextEdit hinhAnhTextEdit;
         private DevExpress.XtraEditors.TextEdit ghichuTextEdit;
         private DevExpress.XtraEditors.TextEdit chiNhanhNganHangTextEdit;
         private DevExpress.XtraEditors.TextEdit tenNganHangTextEdit;
@@ -1224,5 +1230,6 @@
         private DevExpress.XtraEditors.DateEdit noiCapCMNDDateEdit;
         private DevExpress.XtraEditors.DateEdit ngayCapCMNDDateEdit;
         private DevExpress.XtraEditors.TextEdit sDTTextEdit;
+        private System.Windows.Forms.LinkLabel hinhAnhLinkLabel;
     }
 }

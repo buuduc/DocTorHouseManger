@@ -39,8 +39,14 @@ namespace DocTorHouseManger
         {
             Detail_InformationForm DetailForm = new Detail_InformationForm();
             DetailForm.Position = danhSachNhanVienBindingSource.Position;
+            DetailForm.truyenData = new Detail_InformationForm.Truyenchocha(UpdateData);
             DetailForm.ShowDialog();
+            danhSachNhanVienBindingSource.Position = DetailForm.Position;
             DetailForm.Close();
+        }
+        private void UpdateData()
+        {
+            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
         }
     }
 }

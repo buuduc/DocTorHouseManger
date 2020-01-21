@@ -80,7 +80,6 @@
             this.colGioiTinh1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHoTen2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaNhanVien2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgayCapCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNoiCapCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgaySinh1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNoiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,6 +89,7 @@
             this.colTenNganHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colThuongTru = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTK_NganHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.danhSachNhanVienGridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -120,6 +120,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSachNhanVienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.colNgayCapCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -512,7 +513,6 @@
             this.colGioiTinh1,
             this.colHoTen2,
             this.colMaNhanVien2,
-            this.colNgayCapCMND,
             this.colNoiCapCMND,
             this.colNgaySinh1,
             this.colNoiSinh,
@@ -521,18 +521,18 @@
             this.colTonGiao,
             this.colTenNganHang,
             this.colThuongTru,
-            this.colTK_NganHang});
+            this.colTK_NganHang,
+            this.colSDT,
+            this.colNgayCapCMND});
             this.gridView3.GridControl = this.danhSachNhanVienGridControl2;
             this.gridView3.Name = "gridView3";
-            this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgayCapCMND, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colChiNhanhNganHang
             // 
             this.colChiNhanhNganHang.FieldName = "ChiNhanhNganHang";
             this.colChiNhanhNganHang.Name = "colChiNhanhNganHang";
             this.colChiNhanhNganHang.Visible = true;
-            this.colChiNhanhNganHang.VisibleIndex = 15;
+            this.colChiNhanhNganHang.VisibleIndex = 14;
             // 
             // colCMND
             // 
@@ -576,19 +576,12 @@
             this.colMaNhanVien2.Visible = true;
             this.colMaNhanVien2.VisibleIndex = 1;
             // 
-            // colNgayCapCMND
-            // 
-            this.colNgayCapCMND.FieldName = "NgayCapCMND";
-            this.colNgayCapCMND.Name = "colNgayCapCMND";
-            this.colNgayCapCMND.Visible = true;
-            this.colNgayCapCMND.VisibleIndex = 12;
-            // 
             // colNoiCapCMND
             // 
             this.colNoiCapCMND.FieldName = "NoiCapCMND";
             this.colNoiCapCMND.Name = "colNoiCapCMND";
             this.colNoiCapCMND.Visible = true;
-            this.colNoiCapCMND.VisibleIndex = 13;
+            this.colNoiCapCMND.VisibleIndex = 12;
             // 
             // colNgaySinh1
             // 
@@ -630,7 +623,7 @@
             this.colTenNganHang.FieldName = "TenNganHang";
             this.colTenNganHang.Name = "colTenNganHang";
             this.colTenNganHang.Visible = true;
-            this.colTenNganHang.VisibleIndex = 16;
+            this.colTenNganHang.VisibleIndex = 15;
             // 
             // colThuongTru
             // 
@@ -644,7 +637,14 @@
             this.colTK_NganHang.FieldName = "TK_NganHang";
             this.colTK_NganHang.Name = "colTK_NganHang";
             this.colTK_NganHang.Visible = true;
-            this.colTK_NganHang.VisibleIndex = 14;
+            this.colTK_NganHang.VisibleIndex = 13;
+            // 
+            // colSDT
+            // 
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 16;
             // 
             // xtraTabPage3
             // 
@@ -910,6 +910,13 @@
             this.danhSachNhanVienBindingNavigatorSaveItem.Text = "Save Data";
             this.danhSachNhanVienBindingNavigatorSaveItem.Click += new System.EventHandler(this.danhSachNhanVienBindingNavigatorSaveItem_Click);
             // 
+            // colNgayCapCMND
+            // 
+            this.colNgayCapCMND.FieldName = "NgayCapCMND";
+            this.colNgayCapCMND.Name = "colNgayCapCMND";
+            this.colNgayCapCMND.Visible = true;
+            this.colNgayCapCMND.VisibleIndex = 17;
+            // 
             // GuiChinh
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1033,7 +1040,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGioiTinh1;
         private DevExpress.XtraGrid.Columns.GridColumn colHoTen2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNhanVien2;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayCapCMND;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiCapCMND;
         private DevExpress.XtraGrid.Columns.GridColumn colNgaySinh1;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiSinh;
@@ -1043,6 +1049,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenNganHang;
         private DevExpress.XtraGrid.Columns.GridColumn colThuongTru;
         private DevExpress.XtraGrid.Columns.GridColumn colTK_NganHang;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayCapCMND;
         //
     }
 }

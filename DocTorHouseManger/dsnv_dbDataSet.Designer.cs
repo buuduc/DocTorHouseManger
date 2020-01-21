@@ -442,6 +442,8 @@ namespace DocTorHouseManger {
             
             private global::System.Data.DataColumn columnGhichu;
             
+            private global::System.Data.DataColumn columnHinhAnh;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DanhSachNhanVienDataTable() {
@@ -709,6 +711,14 @@ namespace DocTorHouseManger {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HinhAnhColumn {
+                get {
+                    return this.columnHinhAnh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -757,9 +767,9 @@ namespace DocTorHouseManger {
                         string TonGiao, 
                         string HonNhan, 
                         string Email, 
-                        int SDT, 
+                        string SDT, 
                         string CMND, 
-                        string NgayCapCMND, 
+                        System.DateTime NgayCapCMND, 
                         string NoiCapCMND, 
                         string TK_NganHang, 
                         string TenNganHang, 
@@ -773,7 +783,8 @@ namespace DocTorHouseManger {
                         System.DateTime NgayThuViec, 
                         System.DateTime NgayChinhThuc, 
                         string LoaiHopDong, 
-                        string Ghichu) {
+                        string Ghichu, 
+                        string HinhAnh) {
                 DanhSachNhanVienRow rowDanhSachNhanVienRow = ((DanhSachNhanVienRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaNhanVien,
@@ -804,7 +815,8 @@ namespace DocTorHouseManger {
                         NgayThuViec,
                         NgayChinhThuc,
                         LoaiHopDong,
-                        Ghichu};
+                        Ghichu,
+                        HinhAnh};
                 rowDanhSachNhanVienRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDanhSachNhanVienRow);
                 return rowDanhSachNhanVienRow;
@@ -863,6 +875,7 @@ namespace DocTorHouseManger {
                 this.columnNgayChinhThuc = base.Columns["NgayChinhThuc"];
                 this.columnLoaiHopDong = base.Columns["LoaiHopDong"];
                 this.columnGhichu = base.Columns["Ghichu"];
+                this.columnHinhAnh = base.Columns["HinhAnh"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -892,11 +905,11 @@ namespace DocTorHouseManger {
                 base.Columns.Add(this.columnHonNhan);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this.columnSDT = new global::System.Data.DataColumn("SDT", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnSDT = new global::System.Data.DataColumn("SDT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSDT);
                 this.columnCMND = new global::System.Data.DataColumn("CMND", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCMND);
-                this.columnNgayCapCMND = new global::System.Data.DataColumn("NgayCapCMND", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNgayCapCMND = new global::System.Data.DataColumn("NgayCapCMND", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgayCapCMND);
                 this.columnNoiCapCMND = new global::System.Data.DataColumn("NoiCapCMND", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoiCapCMND);
@@ -926,6 +939,8 @@ namespace DocTorHouseManger {
                 base.Columns.Add(this.columnLoaiHopDong);
                 this.columnGhichu = new global::System.Data.DataColumn("Ghichu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGhichu);
+                this.columnHinhAnh = new global::System.Data.DataColumn("HinhAnh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHinhAnh);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaNhanVien}, true));
                 this.columnMaNhanVien.AllowDBNull = false;
@@ -940,8 +955,8 @@ namespace DocTorHouseManger {
                 this.columnTonGiao.MaxLength = 255;
                 this.columnHonNhan.MaxLength = 255;
                 this.columnEmail.MaxLength = 255;
+                this.columnSDT.MaxLength = 255;
                 this.columnCMND.MaxLength = 255;
-                this.columnNgayCapCMND.MaxLength = 255;
                 this.columnNoiCapCMND.MaxLength = 255;
                 this.columnTK_NganHang.MaxLength = 255;
                 this.columnTenNganHang.MaxLength = 255;
@@ -954,6 +969,7 @@ namespace DocTorHouseManger {
                 this.columnChuyenNganh.MaxLength = 255;
                 this.columnLoaiHopDong.MaxLength = 255;
                 this.columnGhichu.MaxLength = 255;
+                this.columnHinhAnh.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2252,10 +2268,10 @@ namespace DocTorHouseManger {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SDT {
+            public string SDT {
                 get {
                     try {
-                        return ((int)(this[this.tableDanhSachNhanVien.SDTColumn]));
+                        return ((string)(this[this.tableDanhSachNhanVien.SDTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SDT\' in table \'DanhSachNhanVien\' is DBNull.", e);
@@ -2284,10 +2300,10 @@ namespace DocTorHouseManger {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NgayCapCMND {
+            public System.DateTime NgayCapCMND {
                 get {
                     try {
-                        return ((string)(this[this.tableDanhSachNhanVien.NgayCapCMNDColumn]));
+                        return ((global::System.DateTime)(this[this.tableDanhSachNhanVien.NgayCapCMNDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NgayCapCMND\' in table \'DanhSachNhanVien\' is DBNull.", e);
@@ -2519,6 +2535,22 @@ namespace DocTorHouseManger {
                 }
                 set {
                     this[this.tableDanhSachNhanVien.GhichuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string HinhAnh {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanhSachNhanVien.HinhAnhColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HinhAnh\' in table \'DanhSachNhanVien\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanhSachNhanVien.HinhAnhColumn] = value;
                 }
             }
             
@@ -2856,6 +2888,18 @@ namespace DocTorHouseManger {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetGhichuNull() {
                 this[this.tableDanhSachNhanVien.GhichuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsHinhAnhNull() {
+                return this.IsNull(this.tableDanhSachNhanVien.HinhAnhColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetHinhAnhNull() {
+                this[this.tableDanhSachNhanVien.HinhAnhColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3591,6 +3635,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NgayChinhThuc", "NgayChinhThuc");
             tableMapping.ColumnMappings.Add("LoaiHopDong", "LoaiHopDong");
             tableMapping.ColumnMappings.Add("Ghichu", "Ghichu");
+            tableMapping.ColumnMappings.Add("HinhAnh", "HinhAnh");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3615,7 +3660,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                 "` = ?)) AND ((? = 1 AND `NgayThuViec` IS NULL) OR (`NgayThuViec` = ?)) AND ((? =" +
                 " 1 AND `NgayChinhThuc` IS NULL) OR (`NgayChinhThuc` = ?)) AND ((? = 1 AND `LoaiH" +
                 "opDong` IS NULL) OR (`LoaiHopDong` = ?)) AND ((? = 1 AND `Ghichu` IS NULL) OR (`" +
-                "Ghichu` = ?)))";
+                "Ghichu` = ?)) AND ((? = 1 AND `HinhAnh` IS NULL) OR (`HinhAnh` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MaNhanVien", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaNhanVien", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STT", global::System.Data.DataRowVersion.Original, true, null));
@@ -3641,11 +3686,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SDT", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NgayCapCMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NgayCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NgayCapCMND", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NoiCapCMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NoiCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_TK_NganHang", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TK_NganHang", global::System.Data.DataRowVersion.Original, true, null));
@@ -3674,9 +3719,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LoaiHopDong", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LoaiHopDong", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Ghichu", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Ghichu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HinhAnh", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HinhAnh", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `DanhSachNhanVien` (`MaNhanVien`, `STT`, `HoTen`, `GioiTinh`, `NgaySinh`, `NoiSinh`, `ThuongTru`, `TamTru`, `DanToc`, `TonGiao`, `HonNhan`, `Email`, `SDT`, `CMND`, `NgayCapCMND`, `NoiCapCMND`, `TK_NganHang`, `TenNganHang`, `ChiNhanhNganHang`, `ViTriCongViec`, `DonViCongTac`, `TrangThai`, `TrinhDoDaoTao`, `NoiDaoTao`, `ChuyenNganh`, `NgayThuViec`, `NgayChinhThuc`, `LoaiHopDong`, `Ghichu`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `DanhSachNhanVien` (`MaNhanVien`, `STT`, `HoTen`, `GioiTinh`, `NgaySinh`, `NoiSinh`, `ThuongTru`, `TamTru`, `DanToc`, `TonGiao`, `HonNhan`, `Email`, `SDT`, `CMND`, `NgayCapCMND`, `NoiCapCMND`, `TK_NganHang`, `TenNganHang`, `ChiNhanhNganHang`, `ViTriCongViec`, `DonViCongTac`, `TrangThai`, `TrinhDoDaoTao`, `NoiDaoTao`, `ChuyenNganh`, `NgayThuViec`, `NgayChinhThuc`, `LoaiHopDong`, `Ghichu`, `HinhAnh`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MaNhanVien", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaNhanVien", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STT", global::System.Data.DataRowVersion.Current, false, null));
@@ -3690,9 +3737,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TonGiao", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TonGiao", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HonNhan", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HonNhan", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SDT", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayCapCMND", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NoiCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TK_NganHang", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TK_NganHang", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TenNganHang", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TenNganHang", global::System.Data.DataRowVersion.Current, false, null));
@@ -3707,6 +3754,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayChinhThuc", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayChinhThuc", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LoaiHopDong", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LoaiHopDong", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ghichu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HinhAnh", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `DanhSachNhanVien` SET `MaNhanVien` = ?, `STT` = ?, `HoTen` = ?, `GioiTinh" +
@@ -3715,28 +3763,29 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                 "D` = ?, `NoiCapCMND` = ?, `TK_NganHang` = ?, `TenNganHang` = ?, `ChiNhanhNganHan" +
                 "g` = ?, `ViTriCongViec` = ?, `DonViCongTac` = ?, `TrangThai` = ?, `TrinhDoDaoTao" +
                 "` = ?, `NoiDaoTao` = ?, `ChuyenNganh` = ?, `NgayThuViec` = ?, `NgayChinhThuc` = " +
-                "?, `LoaiHopDong` = ?, `Ghichu` = ? WHERE ((`MaNhanVien` = ?) AND ((? = 1 AND `ST" +
-                "T` IS NULL) OR (`STT` = ?)) AND ((? = 1 AND `HoTen` IS NULL) OR (`HoTen` = ?)) A" +
-                "ND ((? = 1 AND `GioiTinh` IS NULL) OR (`GioiTinh` = ?)) AND ((? = 1 AND `NgaySin" +
-                "h` IS NULL) OR (`NgaySinh` = ?)) AND ((? = 1 AND `NoiSinh` IS NULL) OR (`NoiSinh" +
-                "` = ?)) AND ((? = 1 AND `ThuongTru` IS NULL) OR (`ThuongTru` = ?)) AND ((? = 1 A" +
-                "ND `TamTru` IS NULL) OR (`TamTru` = ?)) AND ((? = 1 AND `DanToc` IS NULL) OR (`D" +
-                "anToc` = ?)) AND ((? = 1 AND `TonGiao` IS NULL) OR (`TonGiao` = ?)) AND ((? = 1 " +
-                "AND `HonNhan` IS NULL) OR (`HonNhan` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (" +
-                "`Email` = ?)) AND ((? = 1 AND `SDT` IS NULL) OR (`SDT` = ?)) AND ((? = 1 AND `CM" +
-                "ND` IS NULL) OR (`CMND` = ?)) AND ((? = 1 AND `NgayCapCMND` IS NULL) OR (`NgayCa" +
-                "pCMND` = ?)) AND ((? = 1 AND `NoiCapCMND` IS NULL) OR (`NoiCapCMND` = ?)) AND ((" +
-                "? = 1 AND `TK_NganHang` IS NULL) OR (`TK_NganHang` = ?)) AND ((? = 1 AND `TenNga" +
-                "nHang` IS NULL) OR (`TenNganHang` = ?)) AND ((? = 1 AND `ChiNhanhNganHang` IS NU" +
-                "LL) OR (`ChiNhanhNganHang` = ?)) AND ((? = 1 AND `ViTriCongViec` IS NULL) OR (`V" +
-                "iTriCongViec` = ?)) AND ((? = 1 AND `DonViCongTac` IS NULL) OR (`DonViCongTac` =" +
-                " ?)) AND ((? = 1 AND `TrangThai` IS NULL) OR (`TrangThai` = ?)) AND ((? = 1 AND " +
-                "`TrinhDoDaoTao` IS NULL) OR (`TrinhDoDaoTao` = ?)) AND ((? = 1 AND `NoiDaoTao` I" +
-                "S NULL) OR (`NoiDaoTao` = ?)) AND ((? = 1 AND `ChuyenNganh` IS NULL) OR (`Chuyen" +
-                "Nganh` = ?)) AND ((? = 1 AND `NgayThuViec` IS NULL) OR (`NgayThuViec` = ?)) AND " +
-                "((? = 1 AND `NgayChinhThuc` IS NULL) OR (`NgayChinhThuc` = ?)) AND ((? = 1 AND `" +
-                "LoaiHopDong` IS NULL) OR (`LoaiHopDong` = ?)) AND ((? = 1 AND `Ghichu` IS NULL) " +
-                "OR (`Ghichu` = ?)))";
+                "?, `LoaiHopDong` = ?, `Ghichu` = ?, `HinhAnh` = ? WHERE ((`MaNhanVien` = ?) AND " +
+                "((? = 1 AND `STT` IS NULL) OR (`STT` = ?)) AND ((? = 1 AND `HoTen` IS NULL) OR (" +
+                "`HoTen` = ?)) AND ((? = 1 AND `GioiTinh` IS NULL) OR (`GioiTinh` = ?)) AND ((? =" +
+                " 1 AND `NgaySinh` IS NULL) OR (`NgaySinh` = ?)) AND ((? = 1 AND `NoiSinh` IS NUL" +
+                "L) OR (`NoiSinh` = ?)) AND ((? = 1 AND `ThuongTru` IS NULL) OR (`ThuongTru` = ?)" +
+                ") AND ((? = 1 AND `TamTru` IS NULL) OR (`TamTru` = ?)) AND ((? = 1 AND `DanToc` " +
+                "IS NULL) OR (`DanToc` = ?)) AND ((? = 1 AND `TonGiao` IS NULL) OR (`TonGiao` = ?" +
+                ")) AND ((? = 1 AND `HonNhan` IS NULL) OR (`HonNhan` = ?)) AND ((? = 1 AND `Email" +
+                "` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `SDT` IS NULL) OR (`SDT` = ?)) AND " +
+                "((? = 1 AND `CMND` IS NULL) OR (`CMND` = ?)) AND ((? = 1 AND `NgayCapCMND` IS NU" +
+                "LL) OR (`NgayCapCMND` = ?)) AND ((? = 1 AND `NoiCapCMND` IS NULL) OR (`NoiCapCMN" +
+                "D` = ?)) AND ((? = 1 AND `TK_NganHang` IS NULL) OR (`TK_NganHang` = ?)) AND ((? " +
+                "= 1 AND `TenNganHang` IS NULL) OR (`TenNganHang` = ?)) AND ((? = 1 AND `ChiNhanh" +
+                "NganHang` IS NULL) OR (`ChiNhanhNganHang` = ?)) AND ((? = 1 AND `ViTriCongViec` " +
+                "IS NULL) OR (`ViTriCongViec` = ?)) AND ((? = 1 AND `DonViCongTac` IS NULL) OR (`" +
+                "DonViCongTac` = ?)) AND ((? = 1 AND `TrangThai` IS NULL) OR (`TrangThai` = ?)) A" +
+                "ND ((? = 1 AND `TrinhDoDaoTao` IS NULL) OR (`TrinhDoDaoTao` = ?)) AND ((? = 1 AN" +
+                "D `NoiDaoTao` IS NULL) OR (`NoiDaoTao` = ?)) AND ((? = 1 AND `ChuyenNganh` IS NU" +
+                "LL) OR (`ChuyenNganh` = ?)) AND ((? = 1 AND `NgayThuViec` IS NULL) OR (`NgayThuV" +
+                "iec` = ?)) AND ((? = 1 AND `NgayChinhThuc` IS NULL) OR (`NgayChinhThuc` = ?)) AN" +
+                "D ((? = 1 AND `LoaiHopDong` IS NULL) OR (`LoaiHopDong` = ?)) AND ((? = 1 AND `Gh" +
+                "ichu` IS NULL) OR (`Ghichu` = ?)) AND ((? = 1 AND `HinhAnh` IS NULL) OR (`HinhAn" +
+                "h` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MaNhanVien", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaNhanVien", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("STT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STT", global::System.Data.DataRowVersion.Current, false, null));
@@ -3750,9 +3799,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TonGiao", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TonGiao", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HonNhan", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HonNhan", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SDT", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayCapCMND", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NoiCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TK_NganHang", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TK_NganHang", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TenNganHang", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TenNganHang", global::System.Data.DataRowVersion.Current, false, null));
@@ -3767,6 +3816,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayChinhThuc", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayChinhThuc", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LoaiHopDong", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LoaiHopDong", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ghichu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("HinhAnh", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_MaNhanVien", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaNhanVien", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_STT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STT", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_STT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "STT", global::System.Data.DataRowVersion.Original, false, null));
@@ -3791,11 +3841,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Email", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Email", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Email", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SDT", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_SDT", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SDT", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NgayCapCMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NgayCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NgayCapCMND", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayCapCMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_NoiCapCMND", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_NoiCapCMND", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NoiCapCMND", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_TK_NganHang", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TK_NganHang", global::System.Data.DataRowVersion.Original, true, null));
@@ -3824,6 +3874,8 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_LoaiHopDong", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LoaiHopDong", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Ghichu", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Ghichu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ghichu", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_HinhAnh", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_HinhAnh", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HinhAnh", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3839,7 +3891,10 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu FROM DanhSachNhanVien";
+            this._commandCollection[0].CommandText = @"SELECT        MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, 
+                         DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh
+FROM            DanhSachNhanVien
+ORDER BY STT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3913,9 +3968,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string Original_TonGiao, 
                     string Original_HonNhan, 
                     string Original_Email, 
-                    global::System.Nullable<int> Original_SDT, 
+                    string Original_SDT, 
                     string Original_CMND, 
-                    string Original_NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> Original_NgayCapCMND, 
                     string Original_NoiCapCMND, 
                     string Original_TK_NganHang, 
                     string Original_TenNganHang, 
@@ -3929,7 +3984,8 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_NgayThuViec, 
                     global::System.Nullable<global::System.DateTime> Original_NgayChinhThuc, 
                     string Original_LoaiHopDong, 
-                    string Original_Ghichu) {
+                    string Original_Ghichu, 
+                    string Original_HinhAnh) {
             if ((Original_MaNhanVien == null)) {
                 throw new global::System.ArgumentNullException("Original_MaNhanVien");
             }
@@ -4024,13 +4080,13 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Email));
             }
-            if ((Original_SDT.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((int)(Original_SDT.Value));
-            }
-            else {
+            if ((Original_SDT == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_SDT));
             }
             if ((Original_CMND == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
@@ -4040,13 +4096,13 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_CMND));
             }
-            if ((Original_NgayCapCMND == null)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            if ((Original_NgayCapCMND.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((System.DateTime)(Original_NgayCapCMND.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_NgayCapCMND));
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             if ((Original_NoiCapCMND == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
@@ -4160,6 +4216,14 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_Ghichu));
             }
+            if ((Original_HinhAnh == null)) {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_HinhAnh));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4193,9 +4257,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string TonGiao, 
                     string HonNhan, 
                     string Email, 
-                    global::System.Nullable<int> SDT, 
+                    string SDT, 
                     string CMND, 
-                    string NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> NgayCapCMND, 
                     string NoiCapCMND, 
                     string TK_NganHang, 
                     string TenNganHang, 
@@ -4209,7 +4273,8 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> NgayThuViec, 
                     global::System.Nullable<global::System.DateTime> NgayChinhThuc, 
                     string LoaiHopDong, 
-                    string Ghichu) {
+                    string Ghichu, 
+                    string HinhAnh) {
             if ((MaNhanVien == null)) {
                 throw new global::System.ArgumentNullException("MaNhanVien");
             }
@@ -4282,11 +4347,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Email));
             }
-            if ((SDT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(SDT.Value));
+            if ((SDT == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(SDT));
             }
             if ((CMND == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -4294,11 +4359,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(CMND));
             }
-            if ((NgayCapCMND == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            if ((NgayCapCMND.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(NgayCapCMND.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(NgayCapCMND));
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((NoiCapCMND == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
@@ -4384,6 +4449,12 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Ghichu));
             }
+            if ((HinhAnh == null)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(HinhAnh));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4417,9 +4488,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string TonGiao, 
                     string HonNhan, 
                     string Email, 
-                    global::System.Nullable<int> SDT, 
+                    string SDT, 
                     string CMND, 
-                    string NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> NgayCapCMND, 
                     string NoiCapCMND, 
                     string TK_NganHang, 
                     string TenNganHang, 
@@ -4434,6 +4505,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> NgayChinhThuc, 
                     string LoaiHopDong, 
                     string Ghichu, 
+                    string HinhAnh, 
                     string Original_MaNhanVien, 
                     global::System.Nullable<int> Original_STT, 
                     string Original_HoTen, 
@@ -4446,9 +4518,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string Original_TonGiao, 
                     string Original_HonNhan, 
                     string Original_Email, 
-                    global::System.Nullable<int> Original_SDT, 
+                    string Original_SDT, 
                     string Original_CMND, 
-                    string Original_NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> Original_NgayCapCMND, 
                     string Original_NoiCapCMND, 
                     string Original_TK_NganHang, 
                     string Original_TenNganHang, 
@@ -4462,7 +4534,8 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_NgayThuViec, 
                     global::System.Nullable<global::System.DateTime> Original_NgayChinhThuc, 
                     string Original_LoaiHopDong, 
-                    string Original_Ghichu) {
+                    string Original_Ghichu, 
+                    string Original_HinhAnh) {
             if ((MaNhanVien == null)) {
                 throw new global::System.ArgumentNullException("MaNhanVien");
             }
@@ -4535,11 +4608,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Email));
             }
-            if ((SDT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(SDT.Value));
+            if ((SDT == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(SDT));
             }
             if ((CMND == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -4547,11 +4620,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(CMND));
             }
-            if ((NgayCapCMND == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            if ((NgayCapCMND.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(NgayCapCMND.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(NgayCapCMND));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((NoiCapCMND == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
@@ -4637,235 +4710,249 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Ghichu));
             }
+            if ((HinhAnh == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(HinhAnh));
+            }
             if ((Original_MaNhanVien == null)) {
                 throw new global::System.ArgumentNullException("Original_MaNhanVien");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_MaNhanVien));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_MaNhanVien));
             }
             if ((Original_STT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_STT.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_STT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_HoTen == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_HoTen));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_HoTen));
             }
             if ((Original_GioiTinh == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_GioiTinh));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_GioiTinh));
             }
             if ((Original_NgaySinh.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_NgaySinh.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_NgaySinh.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_NoiSinh == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_NoiSinh));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_NoiSinh));
             }
             if ((Original_ThuongTru == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_ThuongTru));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_ThuongTru));
             }
             if ((Original_TamTru == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_TamTru));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_TamTru));
             }
             if ((Original_DanToc == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_DanToc));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_DanToc));
             }
             if ((Original_TonGiao == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_TonGiao));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_TonGiao));
             }
             if ((Original_HonNhan == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_HonNhan));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_HonNhan));
             }
             if ((Original_Email == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Email));
             }
-            if ((Original_SDT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((int)(Original_SDT.Value));
+            if ((Original_SDT == null)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_SDT));
             }
             if ((Original_CMND == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_CMND));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_CMND));
             }
-            if ((Original_NgayCapCMND == null)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            if ((Original_NgayCapCMND.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((System.DateTime)(Original_NgayCapCMND.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_NgayCapCMND));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             if ((Original_NoiCapCMND == null)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_NoiCapCMND));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_NoiCapCMND));
             }
             if ((Original_TK_NganHang == null)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_TK_NganHang));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_TK_NganHang));
             }
             if ((Original_TenNganHang == null)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_TenNganHang));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_TenNganHang));
             }
             if ((Original_ChiNhanhNganHang == null)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_ChiNhanhNganHang));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_ChiNhanhNganHang));
             }
             if ((Original_ViTriCongViec == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_ViTriCongViec));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_ViTriCongViec));
             }
             if ((Original_DonViCongTac == null)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_DonViCongTac));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_DonViCongTac));
             }
             if ((Original_TrangThai == null)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_TrangThai));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_TrangThai));
             }
             if ((Original_TrinhDoDaoTao == null)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_TrinhDoDaoTao));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_TrinhDoDaoTao));
             }
             if ((Original_NoiDaoTao == null)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(Original_NoiDaoTao));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_NoiDaoTao));
             }
             if ((Original_ChuyenNganh == null)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_ChuyenNganh));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_ChuyenNganh));
             }
             if ((Original_NgayThuViec.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((System.DateTime)(Original_NgayThuViec.Value));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((System.DateTime)(Original_NgayThuViec.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             if ((Original_NgayChinhThuc.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((System.DateTime)(Original_NgayChinhThuc.Value));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((System.DateTime)(Original_NgayChinhThuc.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             if ((Original_LoaiHopDong == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_LoaiHopDong));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_LoaiHopDong));
             }
             if ((Original_Ghichu == null)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_Ghichu));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_Ghichu));
+            }
+            if ((Original_HinhAnh == null)) {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_HinhAnh));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4899,9 +4986,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string TonGiao, 
                     string HonNhan, 
                     string Email, 
-                    global::System.Nullable<int> SDT, 
+                    string SDT, 
                     string CMND, 
-                    string NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> NgayCapCMND, 
                     string NoiCapCMND, 
                     string TK_NganHang, 
                     string TenNganHang, 
@@ -4916,6 +5003,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> NgayChinhThuc, 
                     string LoaiHopDong, 
                     string Ghichu, 
+                    string HinhAnh, 
                     string Original_MaNhanVien, 
                     global::System.Nullable<int> Original_STT, 
                     string Original_HoTen, 
@@ -4928,9 +5016,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     string Original_TonGiao, 
                     string Original_HonNhan, 
                     string Original_Email, 
-                    global::System.Nullable<int> Original_SDT, 
+                    string Original_SDT, 
                     string Original_CMND, 
-                    string Original_NgayCapCMND, 
+                    global::System.Nullable<global::System.DateTime> Original_NgayCapCMND, 
                     string Original_NoiCapCMND, 
                     string Original_TK_NganHang, 
                     string Original_TenNganHang, 
@@ -4944,8 +5032,9 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_NgayThuViec, 
                     global::System.Nullable<global::System.DateTime> Original_NgayChinhThuc, 
                     string Original_LoaiHopDong, 
-                    string Original_Ghichu) {
-            return this.Update(Original_MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, Original_MaNhanVien, Original_STT, Original_HoTen, Original_GioiTinh, Original_NgaySinh, Original_NoiSinh, Original_ThuongTru, Original_TamTru, Original_DanToc, Original_TonGiao, Original_HonNhan, Original_Email, Original_SDT, Original_CMND, Original_NgayCapCMND, Original_NoiCapCMND, Original_TK_NganHang, Original_TenNganHang, Original_ChiNhanhNganHang, Original_ViTriCongViec, Original_DonViCongTac, Original_TrangThai, Original_TrinhDoDaoTao, Original_NoiDaoTao, Original_ChuyenNganh, Original_NgayThuViec, Original_NgayChinhThuc, Original_LoaiHopDong, Original_Ghichu);
+                    string Original_Ghichu, 
+                    string Original_HinhAnh) {
+            return this.Update(Original_MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh, Original_MaNhanVien, Original_STT, Original_HoTen, Original_GioiTinh, Original_NgaySinh, Original_NoiSinh, Original_ThuongTru, Original_TamTru, Original_DanToc, Original_TonGiao, Original_HonNhan, Original_Email, Original_SDT, Original_CMND, Original_NgayCapCMND, Original_NoiCapCMND, Original_TK_NganHang, Original_TenNganHang, Original_ChiNhanhNganHang, Original_ViTriCongViec, Original_DonViCongTac, Original_TrangThai, Original_TrinhDoDaoTao, Original_NoiDaoTao, Original_ChuyenNganh, Original_NgayThuViec, Original_NgayChinhThuc, Original_LoaiHopDong, Original_Ghichu, Original_HinhAnh);
         }
     }
     
