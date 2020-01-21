@@ -101,3 +101,4 @@ C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\bin\Debug\es\DevExpress.
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\bin\Debug\ja\DevExpress.Xpo.v19.2.resources.dll
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\bin\Debug\ru\DevExpress.Xpo.v19.2.resources.dll
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.Detail_InformationForm.resources
+C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.csprojAssemblyReference.cache

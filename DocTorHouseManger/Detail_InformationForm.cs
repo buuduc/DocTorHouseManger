@@ -13,11 +13,11 @@ using System.IO;
 namespace DocTorHouseManger
 {
     public partial class Detail_InformationForm : DevExpress.XtraEditors.XtraForm
-    {
+    {   
         public Detail_InformationForm()
         {
             InitializeComponent();
-
+            
         }
         public int Position { get; set; }
         protected virtual bool IsFileLocked(FileInfo file)
@@ -44,18 +44,45 @@ namespace DocTorHouseManger
         public delegate void Truyenchocha();
         public Truyenchocha truyenData;
         private void danhSachNhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/ maNhanVienTextEdit.Text == "")
-                MessageBox.Show("Mã Nhân Viên không được phép để trống");
+        { string Tex;
+            if (this.CheckIn)
+            { Tex = "BẠN VỪA SỬ DỤNG THAO TÁC XOÁ,KHI LƯU BẠN SẼ KHÔNG LẤY LẠI ĐƯỢC DỮ LIỆU \n bạn có chắc muốn lưu thay đổi không ?"; }
             else
+            { Tex = " Bạn có chắc muốn lưu thay đổi không ?"; }
+            DialogResult dr = MessageBox.Show(Tex,
+                          "Cảnh báo !", MessageBoxButtons.YesNo);
+            switch (dr)
             {
-                SavePicture();
-                this.Validate();
-                this.danhSachNhanVienBindingSource.EndEdit();
-                this.danhSachNhanVienTableAdapter.Update(this.dsnv_dbDataSet.DanhSachNhanVien);
-                this.tableAdapterManager.UpdateAll(this.dsnv_dbDataSet);
-                truyenData();
+                case DialogResult.Yes:
+                    {
+                        if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/ maNhanVienTextEdit.Text == "")
+                            MessageBox.Show("Mã Nhân Viên không được phép để trống");
+                        else
+                        {   try
+                            {
+                                SavePicture();
+                                this.Validate();
+                                this.danhSachNhanVienBindingSource.EndEdit();
+                                this.tableAdapterManager.UpdateAll(this.dsnv_dbDataSet);
+                                truyenData();
+                                MessageBox.Show("Lưu Thành Công !");
+                                this.CheckIn = false;
+                            }
+                            catch(System.Data.ConstraintException)
+                            {
+                                MessageBox.Show("Mã Nhân Viên bị trùng. không thể lưu");
+                                break;
+                            }
+
+                        }
+
+                    }
+                    break;
+                case DialogResult.No:
+                    break;
             }
+            
+           
         }
 
         private void SavePicture()
@@ -117,24 +144,11 @@ namespace DocTorHouseManger
         {
             System.Diagnostics.Process.Start(hinhAnhLinkLabel.Text);
         }
-
+        private bool CheckIn = false;
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn muốn xoá nhân viên này ? \n Bạn không thể phục hồi nếu đã xoá !",
-                         "Cảnh báo !", MessageBoxButtons.YesNo);
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    {
-                        //danhsachnhanvienTableAdapter.DeleteQuery(masoTextEdit.Text);
-                        truyenData();
-                        MessageBox.Show("Xoá thành công");
-                        this.Close();
-                    }
-                    break;
-                case DialogResult.No:
-                    break;
-            }
+            this.CheckIn = true;
+            
         }
 
     }
