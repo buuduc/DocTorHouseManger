@@ -182,6 +182,7 @@
             this.DelPersonButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DelPersonButton.ImageOptions.Image")));
             this.DelPersonButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DelPersonButton.ImageOptions.LargeImage")));
             this.DelPersonButton.Name = "DelPersonButton";
+            this.DelPersonButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DelPersonButton_ItemClick);
             // 
             // RefreshButton
             // 
@@ -847,6 +848,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 

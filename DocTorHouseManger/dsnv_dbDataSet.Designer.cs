@@ -3888,7 +3888,7 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, 
@@ -3896,6 +3896,11 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
 FROM            DanhSachNhanVien
 ORDER BY STT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM DanhSachNhanVien\r\nWHERE        (MaNhanVien = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MaNhanVien", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MaNhanVien", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5035,6 +5040,35 @@ ORDER BY STT";
                     string Original_Ghichu, 
                     string Original_HinhAnh) {
             return this.Update(Original_MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh, Original_MaNhanVien, Original_STT, Original_HoTen, Original_GioiTinh, Original_NgaySinh, Original_NoiSinh, Original_ThuongTru, Original_TamTru, Original_DanToc, Original_TonGiao, Original_HonNhan, Original_Email, Original_SDT, Original_CMND, Original_NgayCapCMND, Original_NoiCapCMND, Original_TK_NganHang, Original_TenNganHang, Original_ChiNhanhNganHang, Original_ViTriCongViec, Original_DonViCongTac, Original_TrangThai, Original_TrinhDoDaoTao, Original_NoiDaoTao, Original_ChuyenNganh, Original_NgayThuViec, Original_NgayChinhThuc, Original_LoaiHopDong, Original_Ghichu, Original_HinhAnh);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteByMaNhanVien(string MaNhanVien) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((MaNhanVien == null)) {
+                throw new global::System.ArgumentNullException("MaNhanVien");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(MaNhanVien));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

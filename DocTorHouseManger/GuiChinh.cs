@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace DocTorHouseManger
 {
@@ -11,8 +12,8 @@ namespace DocTorHouseManger
 
         }
 
-
-
+        private bool CheckIn = false;
+        static public int Position { get; set; }
         private void GuiChinh_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
@@ -23,16 +24,27 @@ namespace DocTorHouseManger
 
         private void danhSachNhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            if (CheckIn)
+            {
+                DialogResult dr = MessageBox.Show("BẠN VỪA SỬ DỤNG THAO TÁC XOÁ,KHI LƯU BẠN SẼ KHÔNG LẤY LẠI ĐƯỢC DỮ LIỆU \n bạn có chắc muốn lưu thay đổi không ?", "Cảnh báo !", MessageBoxButtons.YesNo);
+                switch (dr)
+                {
+                    case DialogResult.No:
+                        return;
+                }
+            }
             this.Validate();
             this.danhSachNhanVienBindingSource.EndEdit();
             this.danhSachNhanVienTableAdapter.Update(this.dsnv_dbDataSet.DanhSachNhanVien);
             this.tableAdapterManager.UpdateAll(this.dsnv_dbDataSet);
-
+            this.CheckIn = false;
+            MessageBox.Show("Lưu Thành CÔng !");
         }
 
         private void RefreshButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
+            this.CheckIn = false;
         }
 
         private void DetailButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -43,6 +55,7 @@ namespace DocTorHouseManger
             DetailForm.ShowDialog();
             danhSachNhanVienBindingSource.Position = DetailForm.Position;
             DetailForm.Close();
+            
         }
         private void UpdateData()
         {
@@ -57,6 +70,21 @@ namespace DocTorHouseManger
             AddForm.ShowDialog();
             danhSachNhanVienBindingSource.Position = AddForm.Position;
             AddForm.Close();
+        }
+
+        private void DelPersonButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dele_InformationForm DelForm = new Dele_InformationForm();
+            //DelForm.Position = danhSachNhanVienBindingSource.Position;
+            DelForm.Position = danhSachNhanVienBindingSource.Position;
+            DelForm.truyenData = new Dele_InformationForm.Truyenchocha(UpdateData);
+            DelForm.ShowDialog();
+            DelForm.Close();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            this.CheckIn = true;
         }
     }
 }

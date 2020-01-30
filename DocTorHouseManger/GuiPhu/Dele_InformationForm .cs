@@ -12,9 +12,9 @@ using System.IO;
 
 namespace DocTorHouseManger
 {
-    public partial class Add_InformationForm : DevExpress.XtraEditors.XtraForm
+    public partial class Dele_InformationForm : DevExpress.XtraEditors.XtraForm
     {
-        public Add_InformationForm()
+        public Dele_InformationForm()
         {
             InitializeComponent();
 
@@ -56,12 +56,13 @@ namespace DocTorHouseManger
             {
                 case DialogResult.Yes:
                     {
-                        if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/ maNhanVienTextEdit.Text == "")
+                        if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/maNhanVienLabel2.Text == "")
                             MessageBox.Show("Mã Nhân Viên không được phép để trống");
                         else
                         {
                             try
                             {
+                                danhSachNhanVienTableAdapter.DeleteByMaNhanVien(maNhanVienLabel2.Text);
                                 SavePicture();
                                 this.Validate();
                                 this.danhSachNhanVienBindingSource.EndEdit();
@@ -92,7 +93,7 @@ namespace DocTorHouseManger
 
         private void SavePicture()
         {
-            String maso = maNhanVienTextEdit.Text;
+            String maso =maNhanVienLabel2.Text;
             string diachi = "E:/Database/Hinhanh/" + maso + ".png";
             bool checkin = IsFileLocked(new FileInfo(diachi));
             if (System.IO.File.Exists(diachi) == true & checkin == false)
@@ -109,13 +110,13 @@ namespace DocTorHouseManger
             }
             hinhAnhLinkLabel.Text = diachi;
         }
-        private void Add_InformationForm_Load(object sender, EventArgs e)
+        private void Dele_InformationForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
             this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
-            danhSachNhanVienBindingSource.AddNew();
-            int sodem = danhSachNhanVienBindingSource.Position + 1;
-            sTTSpinEdit.Text = sodem.ToString();
+
+            danhSachNhanVienBindingSource.Position = this.Position;
+            this.CheckIn = true;
         }
 
 
@@ -146,7 +147,7 @@ namespace DocTorHouseManger
         {
             string Tex;
             if (this.CheckIn)
-            { Tex = "BẠN VỪA SỬ DỤNG THAO TÁC XOÁ,KHI LƯU BẠN SẼ KHÔNG LẤY LẠI ĐƯỢC DỮ LIỆU \n bạn có chắc muốn lưu thay đổi không ?"; }
+            { Tex = "KHI LƯU BẠN SẼ KHÔNG THỂ LẤY LẠI ĐƯỢC DỮ LIỆU \n bạn có chắc muốn xoá nhân viên này ?"; }
             else
             { Tex = " Bạn có chắc muốn lưu thay đổi không ?"; }
             DialogResult dr = MessageBox.Show(Tex,
@@ -155,12 +156,13 @@ namespace DocTorHouseManger
             {
                 case DialogResult.Yes:
                     {
-                        if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/ maNhanVienTextEdit.Text == "")
+                        if (/*danhSachNhanVienBindingSource.Find("MaNhanVien", "")*/maNhanVienLabel2.Text == "")
                             MessageBox.Show("Mã Nhân Viên không được phép để trống");
                         else
                         {
                             try
                             {
+                                danhSachNhanVienTableAdapter.DeleteByMaNhanVien(maNhanVienLabel2.Text);
                                 SavePicture();
                                 this.Validate();
                                 this.danhSachNhanVienBindingSource.EndEdit();
@@ -168,6 +170,7 @@ namespace DocTorHouseManger
                                 truyenData();
                                 MessageBox.Show("Lưu Thành Công !");
                                 this.CheckIn = false;
+                                this.Close();
                             }
                             catch (System.Data.ConstraintException)
                             {
