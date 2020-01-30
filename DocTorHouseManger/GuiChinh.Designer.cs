@@ -90,6 +90,7 @@
             this.colThuongTru = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTK_NganHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayCapCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.danhSachNhanVienGridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -120,7 +121,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSachNhanVienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.colNgayCapCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -199,6 +199,7 @@
             this.AddPersonButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AddPersonButton.ImageOptions.Image")));
             this.AddPersonButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("AddPersonButton.ImageOptions.LargeImage")));
             this.AddPersonButton.Name = "AddPersonButton";
+            this.AddPersonButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddPersonButton_ItemClick);
             // 
             // ThemBang
             // 
@@ -646,6 +647,13 @@
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 16;
             // 
+            // colNgayCapCMND
+            // 
+            this.colNgayCapCMND.FieldName = "NgayCapCMND";
+            this.colNgayCapCMND.Name = "colNgayCapCMND";
+            this.colNgayCapCMND.Visible = true;
+            this.colNgayCapCMND.VisibleIndex = 17;
+            // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.AutoScroll = true;
@@ -909,13 +917,6 @@
             this.danhSachNhanVienBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.danhSachNhanVienBindingNavigatorSaveItem.Text = "Save Data";
             this.danhSachNhanVienBindingNavigatorSaveItem.Click += new System.EventHandler(this.danhSachNhanVienBindingNavigatorSaveItem_Click);
-            // 
-            // colNgayCapCMND
-            // 
-            this.colNgayCapCMND.FieldName = "NgayCapCMND";
-            this.colNgayCapCMND.Name = "colNgayCapCMND";
-            this.colNgayCapCMND.Visible = true;
-            this.colNgayCapCMND.VisibleIndex = 17;
             // 
             // GuiChinh
             // 

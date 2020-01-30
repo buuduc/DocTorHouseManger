@@ -48,5 +48,15 @@ namespace DocTorHouseManger
         {
             this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
         }
+
+        private void AddPersonButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Add_InformationForm AddForm = new Add_InformationForm();
+            //AddForm.Position = danhSachNhanVienBindingSource.Position;
+            AddForm.truyenData = new Add_InformationForm.Truyenchocha(UpdateData);
+            AddForm.ShowDialog();
+            danhSachNhanVienBindingSource.Position = AddForm.Position;
+            AddForm.Close();
+        }
     }
 }
