@@ -142,7 +142,10 @@ namespace DocTorHouseManger
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(hinhAnhLinkLabel.Text);
+            System.IO.File.Delete("E:/Database/Hinhanh/CorePicture/TempPicture.png");
+            pictureEdit1.Image.Save("E:/Database/Hinhanh/CorePicture/TempPicture.png");
+            System.Diagnostics.Process.Start("E:/Database/Hinhanh/CorePicture/TempPicture.png");
+
         }
         private bool CheckIn = false;
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -151,5 +154,6 @@ namespace DocTorHouseManger
             
         }
 
+       
     }
 }
