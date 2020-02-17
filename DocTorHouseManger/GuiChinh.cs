@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraGrid;
 
 namespace DocTorHouseManger
 {
@@ -9,7 +10,7 @@ namespace DocTorHouseManger
         public GuiChinh()
         {
             InitializeComponent();
-
+            AddTabPage();
         }
 
         private bool CheckIn = false;
@@ -85,6 +86,57 @@ namespace DocTorHouseManger
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             this.CheckIn = true;
+        }
+
+        private void ExportEcelBTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GetView();
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog(){Filter = "XLSX Image|*.xlsx",Title = "Lưu file Excel"};
+            if (saveFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                string patch = saveFileDialog1.FileName;
+                CurrentGrid.ExportToXlsx(patch);
+                System.Diagnostics.Process.Start(patch);
+            }
+        }
+        //private DevExpress.XtraGrid.GridControl currentGrid = danhSachNhanVienGridControl
+        private void PrintBTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            //var a = xtraTabControl1.SelectedTabPage.Controls[0];
+            //CurrentGrid = a as GridControl;
+            //CurrentGrid.ExportToXlsx("test.xlsx");
+            //System.Diagnostics.Process.Start("test.xlsx");
+        }
+        static GridControl CurrentGrid;
+        private void GetView()
+        {
+            var a = xtraTabControl1.SelectedTabPage.Controls[0];
+            CurrentGrid = a as GridControl;
+        }
+
+       
+        private void PDFbTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GetView();
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog() { Filter = "PDF Image|*.pdf", Title = "Lưu file pdf" };
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+            string patch = saveFileDialog1.FileName;
+            CurrentGrid.ExportToPdf(patch);
+            System.Diagnostics.Process.Start(patch);
+            }
+        }
+
+        private void AddTabPage()
+        {
+            DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage();
+            DevExpress.XtraGrid.GridControl tabctrl = new GridControl();
+            tabpage.Controls.Add(tabctrl);
+            tabctrl.Dock = DockStyle.Fill;
+            tabctrl.DataSource = danhSachNhanVienBindingSource;
+            xtraTabControl1.TabPages.Add(tabpage);
+
         }
     }
 }

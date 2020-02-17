@@ -41,6 +41,9 @@
             this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.ExportEcelBTN = new DevExpress.XtraBars.BarButtonItem();
+            this.PDFbTN = new DevExpress.XtraBars.BarButtonItem();
+            this.PrintBTN = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -49,6 +52,9 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -121,6 +127,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSachNhanVienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -138,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingNavigator)).BeginInit();
             this.danhSachNhanVienBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -157,9 +165,12 @@
             this.ribbonGalleryBarItem1,
             this.skinPaletteRibbonGalleryBarItem1,
             this.barStaticItem1,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.ExportEcelBTN,
+            this.PDFbTN,
+            this.PrintBTN});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -246,6 +257,33 @@
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
+            // ExportEcelBTN
+            // 
+            this.ExportEcelBTN.Caption = "Xuất Excel";
+            this.ExportEcelBTN.Id = 13;
+            this.ExportEcelBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportEcelBTN.ImageOptions.Image")));
+            this.ExportEcelBTN.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportEcelBTN.ImageOptions.LargeImage")));
+            this.ExportEcelBTN.Name = "ExportEcelBTN";
+            this.ExportEcelBTN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExportEcelBTN_ItemClick);
+            // 
+            // PDFbTN
+            // 
+            this.PDFbTN.Caption = "Xuất PDF";
+            this.PDFbTN.Id = 14;
+            this.PDFbTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PDFbTN.ImageOptions.Image")));
+            this.PDFbTN.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PDFbTN.ImageOptions.LargeImage")));
+            this.PDFbTN.Name = "PDFbTN";
+            this.PDFbTN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PDFbTN_ItemClick);
+            // 
+            // PrintBTN
+            // 
+            this.PrintBTN.Caption = "In Bảng";
+            this.PrintBTN.Id = 15;
+            this.PrintBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PrintBTN.ImageOptions.Image")));
+            this.PrintBTN.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PrintBTN.ImageOptions.LargeImage")));
+            this.PrintBTN.Name = "PrintBTN";
+            this.PrintBTN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PrintBTN_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -280,7 +318,10 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Bảng dữ liệu";
             // 
@@ -293,6 +334,22 @@
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.DoiTen);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.ExportEcelBTN);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.PDFbTN);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup9.ImageOptions.Image")));
+            this.ribbonPageGroup9.ItemLinks.Add(this.PrintBTN);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // fluentDesignFormContainer1
             // 
@@ -877,7 +934,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -920,12 +976,25 @@
             this.danhSachNhanVienBindingNavigatorSaveItem.Text = "Save Data";
             this.danhSachNhanVienBindingNavigatorSaveItem.Click += new System.EventHandler(this.danhSachNhanVienBindingNavigatorSaveItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(793, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // GuiChinh
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 479);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.danhSachNhanVienBindingNavigator);
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.ribbonControl1);
@@ -952,6 +1021,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingNavigator)).EndInit();
             this.danhSachNhanVienBindingNavigator.ResumeLayout(false);
             this.danhSachNhanVienBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1054,6 +1124,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTK_NganHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayCapCMND;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraBars.BarButtonItem ExportEcelBTN;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem PDFbTN;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem PrintBTN;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         //
     }
 }
