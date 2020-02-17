@@ -17,7 +17,7 @@ namespace DocTorHouseManger
         public Detail_InformationForm()
         {
             InitializeComponent();
-            
+            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
         }
         public int Position { get; set; }
         protected virtual bool IsFileLocked(FileInfo file)

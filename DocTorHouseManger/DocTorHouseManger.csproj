@@ -69,6 +69,11 @@
     <Compile Include="dsnv_dbDataSet.cs">
       <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsnv_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GuiPhu\Dele_InformationForm .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +91,6 @@
     </Compile>
     <Compile Include="GuiPhu\Detail_InformationForm.Designer.cs">
       <DependentUpon>Detail_InformationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dsnv_dbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GuiChinh.cs">
       <SubType>Form</SubType>

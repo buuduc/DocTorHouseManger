@@ -357,7 +357,7 @@
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 158);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1023, 321);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1023, 346);
             this.fluentDesignFormContainer1.TabIndex = 1;
             // 
             // xtraTabControl1
@@ -367,7 +367,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1023, 321);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1023, 346);
             this.xtraTabControl1.TabIndex = 9;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -380,7 +380,7 @@
             this.xtraTabPage1.Controls.Add(this.danhSachNhanVienGridControl);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabPage1.Size = new System.Drawing.Size(1021, 296);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1021, 321);
             this.xtraTabPage1.Text = "Thông Tin Chung";
             // 
             // danhSachNhanVienGridControl
@@ -393,7 +393,7 @@
             this.danhSachNhanVienGridControl.MainView = this.gridView1;
             this.danhSachNhanVienGridControl.MenuManager = this.ribbonControl1;
             this.danhSachNhanVienGridControl.Name = "danhSachNhanVienGridControl";
-            this.danhSachNhanVienGridControl.Size = new System.Drawing.Size(1023, 269);
+            this.danhSachNhanVienGridControl.Size = new System.Drawing.Size(1023, 294);
             this.danhSachNhanVienGridControl.TabIndex = 0;
             this.danhSachNhanVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -870,7 +870,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.danhSachNhanVienBindingNavigatorSaveItem});
-            this.danhSachNhanVienBindingNavigator.Location = new System.Drawing.Point(0, 454);
+            this.danhSachNhanVienBindingNavigator.Location = new System.Drawing.Point(0, 479);
             this.danhSachNhanVienBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.danhSachNhanVienBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.danhSachNhanVienBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -993,7 +993,7 @@
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 479);
+            this.ClientSize = new System.Drawing.Size(1023, 504);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.danhSachNhanVienBindingNavigator);
             this.Controls.Add(this.fluentDesignFormContainer1);
