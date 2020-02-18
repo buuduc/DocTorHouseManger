@@ -104,7 +104,6 @@ C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseMan
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.csprojAssemblyReference.cache
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.Add_InformationForm.resources
 C:\Users\HP\Desktop\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.Dele_InformationForm.resources
-C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DocTorHouseManger.exe.config
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DocTorHouseManger.exe
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DocTorHouseManger.pdb
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DevExpress.CodeParser.v19.2.dll
@@ -211,3 +210,4 @@ C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\Do
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.exe
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.pdb
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.csprojAssemblyReference.cache
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DocTorHouseManger.exe.config
