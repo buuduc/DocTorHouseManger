@@ -70,6 +70,7 @@ namespace DocTorHouseManger
                                 truyenData();
                                 MessageBox.Show("Lưu Thành Công !");
                                 this.CheckIn = false;
+                                this.Close();
                             }
                             catch (System.Data.ConstraintException)
                             {
@@ -91,10 +92,19 @@ namespace DocTorHouseManger
 
         }
 
+        private void Dele_InformationForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
+            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
+
+            danhSachNhanVienBindingSource.Position = this.Position;
+            this.CheckIn = true;
+        }
+        static string FilePatch = configMNG.filepatch;
         private void SavePicture()
         {
-            String maso =maNhanVienLabel2.Text;
-            string diachi = "E:/Database/Hinhanh/" + maso + ".png";
+            String maso = maNhanVienLabel2.Text;
+            string diachi = FilePatch+"Hinhanh/" + maso + ".png";
             bool checkin = IsFileLocked(new FileInfo(diachi));
             if (System.IO.File.Exists(diachi) == true & checkin == false)
             {
@@ -108,15 +118,7 @@ namespace DocTorHouseManger
             {
                 pictureEdit1.Image.Save(diachi);
             }
-            hinhAnhLinkLabel.Text = diachi;
-        }
-        private void Dele_InformationForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
-            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
-
-            danhSachNhanVienBindingSource.Position = this.Position;
-            this.CheckIn = true;
+            hinhAnhLinkLabel.Text = "Hinhanh/" + maso + ".png";
         }
 
 
@@ -129,20 +131,34 @@ namespace DocTorHouseManger
 
         private void hinhAnhLinkLabel_TextChanged(object sender, EventArgs e)
         {
-            if (hinhAnhLinkLabel.Text != "" & System.IO.File.Exists(hinhAnhLinkLabel.Text) == true)
+            if (hinhAnhLinkLabel.Text != "" & System.IO.File.Exists(FilePatch + hinhAnhLinkLabel.Text) == true)
             {
-                pictureEdit1.Image = Image.FromFile(hinhAnhLinkLabel.Text);
+                pictureEdit1.Image = Image.FromFile(FilePatch + hinhAnhLinkLabel.Text);
 
             }
             else
             {
-                pictureEdit1.Image = Image.FromFile("E:/Database/Hinhanh/CorePicture/Admin.png");
+                pictureEdit1.Image = Image.FromFile(FilePatch + "Hinhanh/CorePicture/Admin.png");
             }
             pictureEdit1.Refresh();
         }
 
 
 
+
+        private void pictureEdit1_DoubleClick(object sender, EventArgs e)
+        {
+            System.IO.File.Delete(FilePatch+"Hinhanh/CorePicture/TempPicture.png");
+            pictureEdit1.Image.Save(FilePatch+"Hinhanh/CorePicture/TempPicture.png");
+            System.Diagnostics.Process.Start(FilePatch+"Hinhanh/CorePicture/TempPicture.png");
+
+        }
+        private bool CheckIn = false;
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            this.CheckIn = true;
+
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             string Tex;
@@ -186,19 +202,6 @@ namespace DocTorHouseManger
             }
         }
 
-        private void pictureEdit1_DoubleClick(object sender, EventArgs e)
-        {
-            System.IO.File.Delete("E:/Database/Hinhanh/CorePicture/TempPicture.png");
-            pictureEdit1.Image.Save("E:/Database/Hinhanh/CorePicture/TempPicture.png");
-            System.Diagnostics.Process.Start("E:/Database/Hinhanh/CorePicture/TempPicture.png");
-
-        }
-        private bool CheckIn = false;
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            this.CheckIn = true;
-
-        }
 
     }
 }

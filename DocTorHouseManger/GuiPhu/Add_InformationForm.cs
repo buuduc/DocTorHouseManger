@@ -90,10 +90,11 @@ namespace DocTorHouseManger
 
         }
 
+        static string FilePatch = configMNG.filepatch;
         private void SavePicture()
         {
             String maso = maNhanVienTextEdit.Text;
-            string diachi = "E:/Database/Hinhanh/" + maso + ".png";
+            string diachi = FilePatch + "Hinhanh/" + maso + ".png";
             bool checkin = IsFileLocked(new FileInfo(diachi));
             if (System.IO.File.Exists(diachi) == true & checkin == false)
             {
@@ -107,7 +108,7 @@ namespace DocTorHouseManger
             {
                 pictureEdit1.Image.Save(diachi);
             }
-            hinhAnhLinkLabel.Text = diachi;
+            hinhAnhLinkLabel.Text = "Hinhanh/" + maso + ".png";
         }
         private void Add_InformationForm_Load(object sender, EventArgs e)
         {
@@ -128,14 +129,14 @@ namespace DocTorHouseManger
 
         private void hinhAnhLinkLabel_TextChanged(object sender, EventArgs e)
         {
-            if (hinhAnhLinkLabel.Text != "" & System.IO.File.Exists(hinhAnhLinkLabel.Text) == true)
+            if (hinhAnhLinkLabel.Text != "" & System.IO.File.Exists(FilePatch + hinhAnhLinkLabel.Text) == true)
             {
-                pictureEdit1.Image = Image.FromFile(hinhAnhLinkLabel.Text);
+                pictureEdit1.Image = Image.FromFile(FilePatch + hinhAnhLinkLabel.Text);
 
             }
             else
             {
-                pictureEdit1.Image = Image.FromFile("E:/Database/Hinhanh/CorePicture/Admin.png");
+                pictureEdit1.Image = Image.FromFile(FilePatch + "Hinhanh/CorePicture/Admin.png");
             }
             pictureEdit1.Refresh();
         }
@@ -169,6 +170,7 @@ namespace DocTorHouseManger
                                 truyenData();
                                 MessageBox.Show("Lưu Thành Công !");
                                 this.CheckIn = false;
+                                this.Close();
                             }
                             catch (System.Data.ConstraintException)
                             {
@@ -186,9 +188,9 @@ namespace DocTorHouseManger
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
         {
-            System.IO.File.Delete("E:/Database/Hinhanh/CorePicture/TempPicture.png");
-            pictureEdit1.Image.Save("E:/Database/Hinhanh/CorePicture/TempPicture.png");
-            System.Diagnostics.Process.Start("E:/Database/Hinhanh/CorePicture/TempPicture.png");
+            System.IO.File.Delete(FilePatch+"CorePicture/TempPicture.png");
+            pictureEdit1.Image.Save(FilePatch+"CorePicture/TempPicture.png");
+            System.Diagnostics.Process.Start(FilePatch+"CorePicture/TempPicture.png");
 
         }
         private bool CheckIn = false;
