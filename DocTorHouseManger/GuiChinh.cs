@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DocTorHouseManger
 {
@@ -10,7 +12,7 @@ namespace DocTorHouseManger
         public GuiChinh()
         {
             InitializeComponent();
-            AddTabPage();
+            
         }
 
         private bool CheckIn = false;
@@ -131,12 +133,26 @@ namespace DocTorHouseManger
         private void AddTabPage()
         {
             DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage();
-            DevExpress.XtraGrid.GridControl tabctrl = new GridControl();
-            tabpage.Controls.Add(tabctrl);
-            tabctrl.Dock = DockStyle.Fill;
-            tabctrl.DataSource = danhSachNhanVienBindingSource;
-            xtraTabControl1.TabPages.Add(tabpage);
+            DevExpress.XtraGrid.GridControl gridctrl = new GridControl();
+            tabpage.Controls.Add(gridctrl);
+            gridctrl.Dock = DockStyle.Fill;
 
+            GridView gridView1 = new GridView();
+            //GridColumn MaNhanViencol = gridView1.Columns["Mã Nhân Viên"];
+            //gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
+            //gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
+            gridctrl.MainView = gridView1;
+            gridctrl.DataSource = danhSachNhanVienBindingSource;
+            //gridView1.Columns
+            //gridView1.Columns.ca
+            xtraTabControl1.TabPages.Add(tabpage);
+            
+        }
+
+        private void xtraTabControl1_CloseButtonClick(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đóng tab này ?", "EXIT", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                xtraTabControl1.TabPages.RemoveAt(xtraTabControl1.SelectedTabPageIndex);
         }
     }
 }

@@ -117,7 +117,8 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, 
                          DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh
-FROM            DanhSachNhanVien</CommandText>
+FROM            DanhSachNhanVien
+ORDER BY STT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

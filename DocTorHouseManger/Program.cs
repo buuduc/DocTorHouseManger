@@ -19,5 +19,6 @@ namespace DocTorHouseManger
             Application.Run(new GuiChinh());
 
         }
+        public static string filepatch = 
     }
 }

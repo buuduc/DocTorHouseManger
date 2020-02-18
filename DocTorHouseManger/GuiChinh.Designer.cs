@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuiChinh));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.DetailButton = new DevExpress.XtraBars.BarButtonItem();
             this.DelPersonButton = new DevExpress.XtraBars.BarButtonItem();
@@ -128,6 +129,38 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSachNhanVienBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.danhSachNhanVienGridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaNhanVien3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHoTen3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGioiTinh2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTT3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgaySinh2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoiSinh1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colThuongTru1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTamTru1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTonGiao1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDanToc1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHonNhan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMND1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayCapCMND1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoiCapCMND1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTK_NganHang1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenNganHang1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChiNhanhNganHang1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTrinhDoDaoTao2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoiDaoTao2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChuyenNganh1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDonViCongTac2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhichu1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiHopDong2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayChinhThuc2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayThuViec2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTrangThai2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colViTriCongViec2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -146,6 +179,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingNavigator)).BeginInit();
             this.danhSachNhanVienBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -357,7 +393,7 @@
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 158);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1023, 346);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1023, 371);
             this.fluentDesignFormContainer1.TabIndex = 1;
             // 
             // xtraTabControl1
@@ -367,12 +403,14 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1023, 346);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1023, 371);
             this.xtraTabControl1.TabIndex = 9;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2,
-            this.xtraTabPage3});
+            this.xtraTabPage3,
+            this.xtraTabPage4});
+            this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
             // xtraTabPage1
             // 
@@ -380,7 +418,7 @@
             this.xtraTabPage1.Controls.Add(this.danhSachNhanVienGridControl);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabPage1.Size = new System.Drawing.Size(1021, 321);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1021, 346);
             this.xtraTabPage1.Text = "Thông Tin Chung";
             // 
             // danhSachNhanVienGridControl
@@ -389,11 +427,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.danhSachNhanVienGridControl.DataSource = this.danhSachNhanVienBindingSource;
+            gridLevelNode2.RelationName = "Level1";
+            this.danhSachNhanVienGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
             this.danhSachNhanVienGridControl.Location = new System.Drawing.Point(-1, 0);
             this.danhSachNhanVienGridControl.MainView = this.gridView1;
             this.danhSachNhanVienGridControl.MenuManager = this.ribbonControl1;
             this.danhSachNhanVienGridControl.Name = "danhSachNhanVienGridControl";
-            this.danhSachNhanVienGridControl.Size = new System.Drawing.Size(1023, 294);
+            this.danhSachNhanVienGridControl.Size = new System.Drawing.Size(1023, 319);
             this.danhSachNhanVienGridControl.TabIndex = 0;
             this.danhSachNhanVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -544,7 +585,7 @@
             this.xtraTabPage2.AutoScroll = true;
             this.xtraTabPage2.Controls.Add(this.danhSachNhanVienGridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1021, 296);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1021, 346);
             this.xtraTabPage2.Text = "Thông Tin Cá Nhân";
             // 
             // danhSachNhanVienGridControl2
@@ -557,7 +598,7 @@
             this.danhSachNhanVienGridControl2.MainView = this.gridView3;
             this.danhSachNhanVienGridControl2.MenuManager = this.ribbonControl1;
             this.danhSachNhanVienGridControl2.Name = "danhSachNhanVienGridControl2";
-            this.danhSachNhanVienGridControl2.Size = new System.Drawing.Size(1023, 269);
+            this.danhSachNhanVienGridControl2.Size = new System.Drawing.Size(1023, 319);
             this.danhSachNhanVienGridControl2.TabIndex = 0;
             this.danhSachNhanVienGridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -717,7 +758,7 @@
             this.xtraTabPage3.AutoScroll = true;
             this.xtraTabPage3.Controls.Add(this.danhSachNhanVienGridControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1021, 296);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1021, 346);
             this.xtraTabPage3.Text = "Thông Tin Công Việc";
             // 
             // danhSachNhanVienGridControl1
@@ -730,7 +771,7 @@
             this.danhSachNhanVienGridControl1.MainView = this.gridView2;
             this.danhSachNhanVienGridControl1.MenuManager = this.ribbonControl1;
             this.danhSachNhanVienGridControl1.Name = "danhSachNhanVienGridControl1";
-            this.danhSachNhanVienGridControl1.Size = new System.Drawing.Size(1021, 286);
+            this.danhSachNhanVienGridControl1.Size = new System.Drawing.Size(1021, 319);
             this.danhSachNhanVienGridControl1.TabIndex = 0;
             this.danhSachNhanVienGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -870,7 +911,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.danhSachNhanVienBindingNavigatorSaveItem});
-            this.danhSachNhanVienBindingNavigator.Location = new System.Drawing.Point(0, 479);
+            this.danhSachNhanVienBindingNavigator.Location = new System.Drawing.Point(0, 504);
             this.danhSachNhanVienBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.danhSachNhanVienBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.danhSachNhanVienBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -988,12 +1029,272 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.danhSachNhanVienGridControl3);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(1021, 346);
+            this.xtraTabPage4.Text = "Chi Tiết";
+            // 
+            // danhSachNhanVienGridControl3
+            // 
+            this.danhSachNhanVienGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.danhSachNhanVienGridControl3.DataSource = this.danhSachNhanVienBindingSource;
+            this.danhSachNhanVienGridControl3.Location = new System.Drawing.Point(-2, 0);
+            this.danhSachNhanVienGridControl3.MainView = this.gridView4;
+            this.danhSachNhanVienGridControl3.MenuManager = this.ribbonControl1;
+            this.danhSachNhanVienGridControl3.Name = "danhSachNhanVienGridControl3";
+            this.danhSachNhanVienGridControl3.Size = new System.Drawing.Size(1024, 319);
+            this.danhSachNhanVienGridControl3.TabIndex = 0;
+            this.danhSachNhanVienGridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaNhanVien3,
+            this.colSTT3,
+            this.colHoTen3,
+            this.colGioiTinh2,
+            this.colNgaySinh2,
+            this.colNoiSinh1,
+            this.colSDT1,
+            this.colThuongTru1,
+            this.colTamTru1,
+            this.colTonGiao1,
+            this.colDanToc1,
+            this.colHonNhan,
+            this.colEmail1,
+            this.colCMND1,
+            this.colNgayCapCMND1,
+            this.colNoiCapCMND1,
+            this.colTK_NganHang1,
+            this.colTenNganHang1,
+            this.colChiNhanhNganHang1,
+            this.colTrinhDoDaoTao2,
+            this.colNoiDaoTao2,
+            this.colChuyenNganh1,
+            this.colDonViCongTac2,
+            this.colLoaiHopDong2,
+            this.colNgayThuViec2,
+            this.colNgayChinhThuc2,
+            this.colViTriCongViec2,
+            this.colTrangThai2,
+            this.colGhichu1});
+            this.gridView4.GridControl = this.danhSachNhanVienGridControl3;
+            this.gridView4.Name = "gridView4";
+            // 
+            // colMaNhanVien3
+            // 
+            this.colMaNhanVien3.FieldName = "MaNhanVien";
+            this.colMaNhanVien3.Name = "colMaNhanVien3";
+            this.colMaNhanVien3.Visible = true;
+            this.colMaNhanVien3.VisibleIndex = 0;
+            // 
+            // colHoTen3
+            // 
+            this.colHoTen3.FieldName = "HoTen";
+            this.colHoTen3.Name = "colHoTen3";
+            this.colHoTen3.Visible = true;
+            this.colHoTen3.VisibleIndex = 1;
+            // 
+            // colGioiTinh2
+            // 
+            this.colGioiTinh2.FieldName = "GioiTinh";
+            this.colGioiTinh2.Name = "colGioiTinh2";
+            this.colGioiTinh2.Visible = true;
+            this.colGioiTinh2.VisibleIndex = 2;
+            // 
+            // colSTT3
+            // 
+            this.colSTT3.FieldName = "STT";
+            this.colSTT3.Name = "colSTT3";
+            this.colSTT3.Visible = true;
+            this.colSTT3.VisibleIndex = 3;
+            // 
+            // colNgaySinh2
+            // 
+            this.colNgaySinh2.FieldName = "NgaySinh";
+            this.colNgaySinh2.Name = "colNgaySinh2";
+            this.colNgaySinh2.Visible = true;
+            this.colNgaySinh2.VisibleIndex = 4;
+            // 
+            // colNoiSinh1
+            // 
+            this.colNoiSinh1.FieldName = "NoiSinh";
+            this.colNoiSinh1.Name = "colNoiSinh1";
+            this.colNoiSinh1.Visible = true;
+            this.colNoiSinh1.VisibleIndex = 5;
+            // 
+            // colSDT1
+            // 
+            this.colSDT1.FieldName = "SDT";
+            this.colSDT1.Name = "colSDT1";
+            this.colSDT1.Visible = true;
+            this.colSDT1.VisibleIndex = 6;
+            // 
+            // colThuongTru1
+            // 
+            this.colThuongTru1.FieldName = "ThuongTru";
+            this.colThuongTru1.Name = "colThuongTru1";
+            this.colThuongTru1.Visible = true;
+            this.colThuongTru1.VisibleIndex = 7;
+            // 
+            // colTamTru1
+            // 
+            this.colTamTru1.FieldName = "TamTru";
+            this.colTamTru1.Name = "colTamTru1";
+            this.colTamTru1.Visible = true;
+            this.colTamTru1.VisibleIndex = 8;
+            // 
+            // colTonGiao1
+            // 
+            this.colTonGiao1.FieldName = "TonGiao";
+            this.colTonGiao1.Name = "colTonGiao1";
+            this.colTonGiao1.Visible = true;
+            this.colTonGiao1.VisibleIndex = 9;
+            // 
+            // colDanToc1
+            // 
+            this.colDanToc1.FieldName = "DanToc";
+            this.colDanToc1.Name = "colDanToc1";
+            this.colDanToc1.Visible = true;
+            this.colDanToc1.VisibleIndex = 10;
+            // 
+            // colHonNhan
+            // 
+            this.colHonNhan.FieldName = "HonNhan";
+            this.colHonNhan.Name = "colHonNhan";
+            this.colHonNhan.Visible = true;
+            this.colHonNhan.VisibleIndex = 11;
+            // 
+            // colEmail1
+            // 
+            this.colEmail1.FieldName = "Email";
+            this.colEmail1.Name = "colEmail1";
+            this.colEmail1.Visible = true;
+            this.colEmail1.VisibleIndex = 12;
+            // 
+            // colCMND1
+            // 
+            this.colCMND1.FieldName = "CMND";
+            this.colCMND1.Name = "colCMND1";
+            this.colCMND1.Visible = true;
+            this.colCMND1.VisibleIndex = 13;
+            // 
+            // colNgayCapCMND1
+            // 
+            this.colNgayCapCMND1.FieldName = "NgayCapCMND";
+            this.colNgayCapCMND1.Name = "colNgayCapCMND1";
+            this.colNgayCapCMND1.Visible = true;
+            this.colNgayCapCMND1.VisibleIndex = 14;
+            // 
+            // colNoiCapCMND1
+            // 
+            this.colNoiCapCMND1.FieldName = "NoiCapCMND";
+            this.colNoiCapCMND1.Name = "colNoiCapCMND1";
+            this.colNoiCapCMND1.Visible = true;
+            this.colNoiCapCMND1.VisibleIndex = 15;
+            // 
+            // colTK_NganHang1
+            // 
+            this.colTK_NganHang1.FieldName = "TK_NganHang";
+            this.colTK_NganHang1.Name = "colTK_NganHang1";
+            this.colTK_NganHang1.Visible = true;
+            this.colTK_NganHang1.VisibleIndex = 16;
+            // 
+            // colTenNganHang1
+            // 
+            this.colTenNganHang1.FieldName = "TenNganHang";
+            this.colTenNganHang1.Name = "colTenNganHang1";
+            this.colTenNganHang1.Visible = true;
+            this.colTenNganHang1.VisibleIndex = 17;
+            // 
+            // colChiNhanhNganHang1
+            // 
+            this.colChiNhanhNganHang1.FieldName = "ChiNhanhNganHang";
+            this.colChiNhanhNganHang1.Name = "colChiNhanhNganHang1";
+            this.colChiNhanhNganHang1.Visible = true;
+            this.colChiNhanhNganHang1.VisibleIndex = 18;
+            // 
+            // colTrinhDoDaoTao2
+            // 
+            this.colTrinhDoDaoTao2.FieldName = "TrinhDoDaoTao";
+            this.colTrinhDoDaoTao2.Name = "colTrinhDoDaoTao2";
+            this.colTrinhDoDaoTao2.Visible = true;
+            this.colTrinhDoDaoTao2.VisibleIndex = 19;
+            // 
+            // colNoiDaoTao2
+            // 
+            this.colNoiDaoTao2.FieldName = "NoiDaoTao";
+            this.colNoiDaoTao2.Name = "colNoiDaoTao2";
+            this.colNoiDaoTao2.Visible = true;
+            this.colNoiDaoTao2.VisibleIndex = 20;
+            // 
+            // colChuyenNganh1
+            // 
+            this.colChuyenNganh1.FieldName = "ChuyenNganh";
+            this.colChuyenNganh1.Name = "colChuyenNganh1";
+            this.colChuyenNganh1.Visible = true;
+            this.colChuyenNganh1.VisibleIndex = 21;
+            // 
+            // colDonViCongTac2
+            // 
+            this.colDonViCongTac2.FieldName = "DonViCongTac";
+            this.colDonViCongTac2.Name = "colDonViCongTac2";
+            this.colDonViCongTac2.Visible = true;
+            this.colDonViCongTac2.VisibleIndex = 22;
+            // 
+            // colGhichu1
+            // 
+            this.colGhichu1.FieldName = "Ghichu";
+            this.colGhichu1.Name = "colGhichu1";
+            this.colGhichu1.Visible = true;
+            this.colGhichu1.VisibleIndex = 23;
+            // 
+            // colLoaiHopDong2
+            // 
+            this.colLoaiHopDong2.FieldName = "LoaiHopDong";
+            this.colLoaiHopDong2.Name = "colLoaiHopDong2";
+            this.colLoaiHopDong2.Visible = true;
+            this.colLoaiHopDong2.VisibleIndex = 24;
+            // 
+            // colNgayChinhThuc2
+            // 
+            this.colNgayChinhThuc2.FieldName = "NgayChinhThuc";
+            this.colNgayChinhThuc2.Name = "colNgayChinhThuc2";
+            this.colNgayChinhThuc2.Visible = true;
+            this.colNgayChinhThuc2.VisibleIndex = 25;
+            // 
+            // colNgayThuViec2
+            // 
+            this.colNgayThuViec2.FieldName = "NgayThuViec";
+            this.colNgayThuViec2.Name = "colNgayThuViec2";
+            this.colNgayThuViec2.Visible = true;
+            this.colNgayThuViec2.VisibleIndex = 26;
+            // 
+            // colTrangThai2
+            // 
+            this.colTrangThai2.FieldName = "TrangThai";
+            this.colTrangThai2.Name = "colTrangThai2";
+            this.colTrangThai2.Visible = true;
+            this.colTrangThai2.VisibleIndex = 27;
+            // 
+            // colViTriCongViec2
+            // 
+            this.colViTriCongViec2.FieldName = "ViTriCongViec";
+            this.colViTriCongViec2.Name = "colViTriCongViec2";
+            this.colViTriCongViec2.Visible = true;
+            this.colViTriCongViec2.VisibleIndex = 28;
+            // 
             // GuiChinh
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 504);
+            this.ClientSize = new System.Drawing.Size(1023, 529);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.danhSachNhanVienBindingNavigator);
             this.Controls.Add(this.fluentDesignFormContainer1);
@@ -1022,6 +1323,9 @@
             this.danhSachNhanVienBindingNavigator.ResumeLayout(false);
             this.danhSachNhanVienBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1131,6 +1435,38 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem PrintBTN;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraGrid.GridControl danhSachNhanVienGridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaNhanVien3;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTT3;
+        private DevExpress.XtraGrid.Columns.GridColumn colHoTen3;
+        private DevExpress.XtraGrid.Columns.GridColumn colGioiTinh2;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgaySinh2;
+        private DevExpress.XtraGrid.Columns.GridColumn colNoiSinh1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colThuongTru1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTamTru1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTonGiao1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDanToc1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHonNhan;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCMND1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayCapCMND1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNoiCapCMND1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTK_NganHang1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenNganHang1;
+        private DevExpress.XtraGrid.Columns.GridColumn colChiNhanhNganHang1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrinhDoDaoTao2;
+        private DevExpress.XtraGrid.Columns.GridColumn colNoiDaoTao2;
+        private DevExpress.XtraGrid.Columns.GridColumn colChuyenNganh1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDonViCongTac2;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoaiHopDong2;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayThuViec2;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayChinhThuc2;
+        private DevExpress.XtraGrid.Columns.GridColumn colViTriCongViec2;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrangThai2;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhichu1;
         //
     }
 }

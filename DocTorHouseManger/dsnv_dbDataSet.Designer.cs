@@ -3893,7 +3893,8 @@ namespace DocTorHouseManger.dsnv_dbDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, 
                          DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh
-FROM            DanhSachNhanVien";
+FROM            DanhSachNhanVien
+ORDER BY STT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
