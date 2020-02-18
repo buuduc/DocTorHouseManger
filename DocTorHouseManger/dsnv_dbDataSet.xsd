@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dsnv_dbConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dsnv_dbConnectionString1 (Settings)" PropertyReference="ApplicationSettings.DocTorHouseManger.Properties.Settings.GlobalReference.Default.dsnv_dbConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dsnv_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dsnv_dbConnectionString (Settings)" PropertyReference="ApplicationSettings.DocTorHouseManger.Properties.Settings.GlobalReference.Default.dsnv_dbConnectionString" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DanhSachNhanVienTableAdapter" GeneratorDataComponentClassName="DanhSachNhanVienTableAdapter" Name="DanhSachNhanVien" UserDataComponentName="DanhSachNhanVienTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dsnv_dbConnectionString1 (Settings)" DbObjectName="DanhSachNhanVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dsnv_dbConnectionString (Settings)" DbObjectName="DanhSachNhanVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `DanhSachNhanVien` WHERE ((`MaNhanVien` = ?) AND ((? = 1 AND `STT` IS NULL) OR (`STT` = ?)) AND ((? = 1 AND `HoTen` IS NULL) OR (`HoTen` = ?)) AND ((? = 1 AND `GioiTinh` IS NULL) OR (`GioiTinh` = ?)) AND ((? = 1 AND `NgaySinh` IS NULL) OR (`NgaySinh` = ?)) AND ((? = 1 AND `NoiSinh` IS NULL) OR (`NoiSinh` = ?)) AND ((? = 1 AND `ThuongTru` IS NULL) OR (`ThuongTru` = ?)) AND ((? = 1 AND `TamTru` IS NULL) OR (`TamTru` = ?)) AND ((? = 1 AND `DanToc` IS NULL) OR (`DanToc` = ?)) AND ((? = 1 AND `TonGiao` IS NULL) OR (`TonGiao` = ?)) AND ((? = 1 AND `HonNhan` IS NULL) OR (`HonNhan` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `SDT` IS NULL) OR (`SDT` = ?)) AND ((? = 1 AND `CMND` IS NULL) OR (`CMND` = ?)) AND ((? = 1 AND `NgayCapCMND` IS NULL) OR (`NgayCapCMND` = ?)) AND ((? = 1 AND `NoiCapCMND` IS NULL) OR (`NoiCapCMND` = ?)) AND ((? = 1 AND `TK_NganHang` IS NULL) OR (`TK_NganHang` = ?)) AND ((? = 1 AND `TenNganHang` IS NULL) OR (`TenNganHang` = ?)) AND ((? = 1 AND `ChiNhanhNganHang` IS NULL) OR (`ChiNhanhNganHang` = ?)) AND ((? = 1 AND `ViTriCongViec` IS NULL) OR (`ViTriCongViec` = ?)) AND ((? = 1 AND `DonViCongTac` IS NULL) OR (`DonViCongTac` = ?)) AND ((? = 1 AND `TrangThai` IS NULL) OR (`TrangThai` = ?)) AND ((? = 1 AND `TrinhDoDaoTao` IS NULL) OR (`TrinhDoDaoTao` = ?)) AND ((? = 1 AND `NoiDaoTao` IS NULL) OR (`NoiDaoTao` = ?)) AND ((? = 1 AND `ChuyenNganh` IS NULL) OR (`ChuyenNganh` = ?)) AND ((? = 1 AND `NgayThuViec` IS NULL) OR (`NgayThuViec` = ?)) AND ((? = 1 AND `NgayChinhThuc` IS NULL) OR (`NgayChinhThuc` = ?)) AND ((? = 1 AND `LoaiHopDong` IS NULL) OR (`LoaiHopDong` = ?)) AND ((? = 1 AND `Ghichu` IS NULL) OR (`Ghichu` = ?)) AND ((? = 1 AND `HinhAnh` IS NULL) OR (`HinhAnh` = ?)))</CommandText>
@@ -114,11 +114,8 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, 
-                         DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh
-FROM            DanhSachNhanVien
-ORDER BY STT</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaNhanVien, STT, HoTen, GioiTinh, NgaySinh, NoiSinh, ThuongTru, TamTru, DanToc, TonGiao, HonNhan, Email, SDT, CMND, NgayCapCMND, NoiCapCMND, TK_NganHang, TenNganHang, ChiNhanhNganHang, ViTriCongViec, DonViCongTac, TrangThai, TrinhDoDaoTao, NoiDaoTao, ChuyenNganh, NgayThuViec, NgayChinhThuc, LoaiHopDong, Ghichu, HinhAnh FROM DanhSachNhanVien</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -221,7 +218,12 @@ ORDER BY STT</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="MaNhanVien" DataSetColumn="MaNhanVien" />
               <Mapping SourceColumn="STT" DataSetColumn="STT" />
+              <Mapping SourceColumn="HoTen" DataSetColumn="HoTen" />
+              <Mapping SourceColumn="GioiTinh" DataSetColumn="GioiTinh" />
+              <Mapping SourceColumn="NgaySinh" DataSetColumn="NgaySinh" />
+              <Mapping SourceColumn="NoiSinh" DataSetColumn="NoiSinh" />
               <Mapping SourceColumn="ThuongTru" DataSetColumn="ThuongTru" />
               <Mapping SourceColumn="TamTru" DataSetColumn="TamTru" />
               <Mapping SourceColumn="DanToc" DataSetColumn="DanToc" />
@@ -246,14 +248,9 @@ ORDER BY STT</CommandText>
               <Mapping SourceColumn="LoaiHopDong" DataSetColumn="LoaiHopDong" />
               <Mapping SourceColumn="Ghichu" DataSetColumn="Ghichu" />
               <Mapping SourceColumn="HinhAnh" DataSetColumn="HinhAnh" />
-              <Mapping SourceColumn="MaNhanVien" DataSetColumn="MaNhanVien" />
-              <Mapping SourceColumn="HoTen" DataSetColumn="HoTen" />
-              <Mapping SourceColumn="GioiTinh" DataSetColumn="GioiTinh" />
-              <Mapping SourceColumn="NgaySinh" DataSetColumn="NgaySinh" />
-              <Mapping SourceColumn="NoiSinh" DataSetColumn="NoiSinh" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="dsnv_dbConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteByMaNhanVien" Modifier="Public" Name="DeleteByMaNhanVien" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteByMaNhanVien">
+              <DbSource ConnectionRef="dsnv_dbConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteByMaNhanVien" Modifier="Public" Name="DeleteByMaNhanVien" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteByMaNhanVien">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM DanhSachNhanVien
@@ -268,7 +265,7 @@ WHERE        (MaNhanVien = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HinhanhTableAdapter" GeneratorDataComponentClassName="HinhanhTableAdapter" Name="Hinhanh" UserDataComponentName="HinhanhTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dsnv_dbConnectionString1 (Settings)" DbObjectName="Hinhanh" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dsnv_dbConnectionString (Settings)" DbObjectName="Hinhanh" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Hinhanh` WHERE ((`Maso` = ?) AND ((? = 1 AND `Picture` IS NULL) OR (`Picture` = ?)))</CommandText>
@@ -316,7 +313,7 @@ WHERE        (MaNhanVien = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ThongtincongviecTableAdapter" GeneratorDataComponentClassName="ThongtincongviecTableAdapter" Name="Thongtincongviec" UserDataComponentName="ThongtincongviecTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dsnv_dbConnectionString1 (Settings)" DbObjectName="Thongtincongviec" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dsnv_dbConnectionString (Settings)" DbObjectName="Thongtincongviec" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Thongtincongviec` WHERE (((? = 1 AND `Maso` IS NULL) OR (`Maso` = ?)) AND ((? = 1 AND `Ngaythuviec` IS NULL) OR (`Ngaythuviec` = ?)) AND ((? = 1 AND `Ngayhopdong` IS NULL) OR (`Ngayhopdong` = ?)) AND ((? = 1 AND `Trangthai` IS NULL) OR (`Trangthai` = ?)) AND ((? = 1 AND `Vitri` IS NULL) OR (`Vitri` = ?)) AND ((? = 1 AND `Noilamviec` IS NULL) OR (`Noilamviec` = ?)) AND ((? = 1 AND `LoaiHopdong` IS NULL) OR (`LoaiHopdong` = ?)) AND (`RefKey` = ?))</CommandText>
@@ -406,7 +403,7 @@ WHERE        (MaNhanVien = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ThongtinnhanvienTableAdapter" GeneratorDataComponentClassName="ThongtinnhanvienTableAdapter" Name="Thongtinnhanvien" UserDataComponentName="ThongtinnhanvienTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dsnv_dbConnectionString1 (Settings)" DbObjectName="Thongtinnhanvien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dsnv_dbConnectionString (Settings)" DbObjectName="Thongtinnhanvien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Thongtinnhanvien` WHERE ((`Maso` = ?) AND ((? = 1 AND `Gioitinh` IS NULL) OR (`Gioitinh` = ?)) AND ((? = 1 AND `Ngaysinh` IS NULL) OR (`Ngaysinh` = ?)) AND ((? = 1 AND `Noisinh` IS NULL) OR (`Noisinh` = ?)) AND ((? = 1 AND `Chuyennganh` IS NULL) OR (`Chuyennganh` = ?)) AND ((? = 1 AND `Trinhdo` IS NULL) OR (`Trinhdo` = ?)))</CommandText>
@@ -491,7 +488,36 @@ WHERE        (MaNhanVien = ?)</CommandText>
         <xs:element name="DanhSachNhanVien" msprop:Generator_TableClassName="DanhSachNhanVienDataTable" msprop:Generator_TableVarName="tableDanhSachNhanVien" msprop:Generator_RowChangedName="DanhSachNhanVienRowChanged" msprop:Generator_TablePropName="DanhSachNhanVien" msprop:Generator_RowDeletingName="DanhSachNhanVienRowDeleting" msprop:Generator_RowChangingName="DanhSachNhanVienRowChanging" msprop:Generator_RowEvHandlerName="DanhSachNhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="DanhSachNhanVienRowDeleted" msprop:Generator_RowClassName="DanhSachNhanVienRow" msprop:Generator_UserTableName="DanhSachNhanVien" msprop:Generator_RowEvArgName="DanhSachNhanVienRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_UserColumnName="HoTen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GioiTinh" msprop:Generator_ColumnVarNameInTable="columnGioiTinh" msprop:Generator_ColumnPropNameInRow="GioiTinh" msprop:Generator_ColumnPropNameInTable="GioiTinhColumn" msprop:Generator_UserColumnName="GioiTinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NgaySinh" msprop:Generator_ColumnVarNameInTable="columnNgaySinh" msprop:Generator_ColumnPropNameInRow="NgaySinh" msprop:Generator_ColumnPropNameInTable="NgaySinhColumn" msprop:Generator_UserColumnName="NgaySinh" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NoiSinh" msprop:Generator_ColumnVarNameInTable="columnNoiSinh" msprop:Generator_ColumnPropNameInRow="NoiSinh" msprop:Generator_ColumnPropNameInTable="NoiSinhColumn" msprop:Generator_UserColumnName="NoiSinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="ThuongTru" msprop:Generator_ColumnVarNameInTable="columnThuongTru" msprop:Generator_ColumnPropNameInRow="ThuongTru" msprop:Generator_ColumnPropNameInTable="ThuongTruColumn" msprop:Generator_UserColumnName="ThuongTru" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -642,39 +668,10 @@ WHERE        (MaNhanVien = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_UserColumnName="HoTen" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="GioiTinh" msprop:Generator_ColumnVarNameInTable="columnGioiTinh" msprop:Generator_ColumnPropNameInRow="GioiTinh" msprop:Generator_ColumnPropNameInTable="GioiTinhColumn" msprop:Generator_UserColumnName="GioiTinh" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NgaySinh" msprop:Generator_ColumnVarNameInTable="columnNgaySinh" msprop:Generator_ColumnPropNameInRow="NgaySinh" msprop:Generator_ColumnPropNameInTable="NgaySinhColumn" msprop:Generator_UserColumnName="NgaySinh" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="NoiSinh" msprop:Generator_ColumnVarNameInTable="columnNoiSinh" msprop:Generator_ColumnPropNameInRow="NoiSinh" msprop:Generator_ColumnPropNameInTable="NoiSinhColumn" msprop:Generator_UserColumnName="NoiSinh" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Hinhanh" msprop:Generator_TableClassName="HinhanhDataTable" msprop:Generator_TableVarName="tableHinhanh" msprop:Generator_RowChangedName="HinhanhRowChanged" msprop:Generator_TablePropName="Hinhanh" msprop:Generator_RowDeletingName="HinhanhRowDeleting" msprop:Generator_RowChangingName="HinhanhRowChanging" msprop:Generator_RowEvHandlerName="HinhanhRowChangeEventHandler" msprop:Generator_RowDeletedName="HinhanhRowDeleted" msprop:Generator_RowClassName="HinhanhRow" msprop:Generator_UserTableName="Hinhanh" msprop:Generator_RowEvArgName="HinhanhRowChangeEvent">
+        <xs:element name="Thongtinnhanvien" msprop:Generator_TableClassName="ThongtinnhanvienDataTable" msprop:Generator_TableVarName="tableThongtinnhanvien" msprop:Generator_RowChangedName="ThongtinnhanvienRowChanged" msprop:Generator_TablePropName="Thongtinnhanvien" msprop:Generator_RowDeletingName="ThongtinnhanvienRowDeleting" msprop:Generator_RowChangingName="ThongtinnhanvienRowChanging" msprop:Generator_RowEvHandlerName="ThongtinnhanvienRowChangeEventHandler" msprop:Generator_RowDeletedName="ThongtinnhanvienRowDeleted" msprop:Generator_RowClassName="ThongtinnhanvienRow" msprop:Generator_UserTableName="Thongtinnhanvien" msprop:Generator_RowEvArgName="ThongtinnhanvienRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Maso" msprop:Generator_ColumnVarNameInTable="columnMaso" msprop:Generator_ColumnPropNameInRow="Maso" msprop:Generator_ColumnPropNameInTable="MasoColumn" msprop:Generator_UserColumnName="Maso">
@@ -684,7 +681,29 @@ WHERE        (MaNhanVien = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnPropNameInTable="PictureColumn" msprop:Generator_UserColumnName="Picture" minOccurs="0">
+              <xs:element name="Gioitinh" msprop:Generator_ColumnVarNameInTable="columnGioitinh" msprop:Generator_ColumnPropNameInRow="Gioitinh" msprop:Generator_ColumnPropNameInTable="GioitinhColumn" msprop:Generator_UserColumnName="Gioitinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ngaysinh" msprop:Generator_ColumnVarNameInTable="columnNgaysinh" msprop:Generator_ColumnPropNameInRow="Ngaysinh" msprop:Generator_ColumnPropNameInTable="NgaysinhColumn" msprop:Generator_UserColumnName="Ngaysinh" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Noisinh" msprop:Generator_ColumnVarNameInTable="columnNoisinh" msprop:Generator_ColumnPropNameInRow="Noisinh" msprop:Generator_ColumnPropNameInTable="NoisinhColumn" msprop:Generator_UserColumnName="Noisinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Chuyennganh" msprop:Generator_ColumnVarNameInTable="columnChuyennganh" msprop:Generator_ColumnPropNameInRow="Chuyennganh" msprop:Generator_ColumnPropNameInTable="ChuyennganhColumn" msprop:Generator_UserColumnName="Chuyennganh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Trinhdo" msprop:Generator_ColumnVarNameInTable="columnTrinhdo" msprop:Generator_ColumnPropNameInRow="Trinhdo" msprop:Generator_ColumnPropNameInTable="TrinhdoColumn" msprop:Generator_UserColumnName="Trinhdo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -744,7 +763,7 @@ WHERE        (MaNhanVien = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Thongtinnhanvien" msprop:Generator_TableClassName="ThongtinnhanvienDataTable" msprop:Generator_TableVarName="tableThongtinnhanvien" msprop:Generator_RowChangedName="ThongtinnhanvienRowChanged" msprop:Generator_TablePropName="Thongtinnhanvien" msprop:Generator_RowDeletingName="ThongtinnhanvienRowDeleting" msprop:Generator_RowChangingName="ThongtinnhanvienRowChanging" msprop:Generator_RowEvHandlerName="ThongtinnhanvienRowChangeEventHandler" msprop:Generator_RowDeletedName="ThongtinnhanvienRowDeleted" msprop:Generator_RowClassName="ThongtinnhanvienRow" msprop:Generator_UserTableName="Thongtinnhanvien" msprop:Generator_RowEvArgName="ThongtinnhanvienRowChangeEvent">
+        <xs:element name="Hinhanh" msprop:Generator_TableClassName="HinhanhDataTable" msprop:Generator_TableVarName="tableHinhanh" msprop:Generator_RowChangedName="HinhanhRowChanged" msprop:Generator_TablePropName="Hinhanh" msprop:Generator_RowDeletingName="HinhanhRowDeleting" msprop:Generator_RowChangingName="HinhanhRowChanging" msprop:Generator_RowEvHandlerName="HinhanhRowChangeEventHandler" msprop:Generator_RowDeletedName="HinhanhRowDeleted" msprop:Generator_RowClassName="HinhanhRow" msprop:Generator_UserTableName="Hinhanh" msprop:Generator_RowEvArgName="HinhanhRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Maso" msprop:Generator_ColumnVarNameInTable="columnMaso" msprop:Generator_ColumnPropNameInRow="Maso" msprop:Generator_ColumnPropNameInTable="MasoColumn" msprop:Generator_UserColumnName="Maso">
@@ -754,29 +773,7 @@ WHERE        (MaNhanVien = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Gioitinh" msprop:Generator_ColumnVarNameInTable="columnGioitinh" msprop:Generator_ColumnPropNameInRow="Gioitinh" msprop:Generator_ColumnPropNameInTable="GioitinhColumn" msprop:Generator_UserColumnName="Gioitinh" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Ngaysinh" msprop:Generator_ColumnVarNameInTable="columnNgaysinh" msprop:Generator_ColumnPropNameInRow="Ngaysinh" msprop:Generator_ColumnPropNameInTable="NgaysinhColumn" msprop:Generator_UserColumnName="Ngaysinh" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Noisinh" msprop:Generator_ColumnVarNameInTable="columnNoisinh" msprop:Generator_ColumnPropNameInRow="Noisinh" msprop:Generator_ColumnPropNameInTable="NoisinhColumn" msprop:Generator_UserColumnName="Noisinh" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Chuyennganh" msprop:Generator_ColumnVarNameInTable="columnChuyennganh" msprop:Generator_ColumnPropNameInRow="Chuyennganh" msprop:Generator_ColumnPropNameInTable="ChuyennganhColumn" msprop:Generator_UserColumnName="Chuyennganh" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Trinhdo" msprop:Generator_ColumnVarNameInTable="columnTrinhdo" msprop:Generator_ColumnPropNameInRow="Trinhdo" msprop:Generator_ColumnPropNameInTable="TrinhdoColumn" msprop:Generator_UserColumnName="Trinhdo" minOccurs="0">
+              <xs:element name="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnPropNameInTable="PictureColumn" msprop:Generator_UserColumnName="Picture" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -792,16 +789,16 @@ WHERE        (MaNhanVien = ?)</CommandText>
       <xs:selector xpath=".//mstns:DanhSachNhanVien" />
       <xs:field xpath="mstns:MaNhanVien" />
     </xs:unique>
-    <xs:unique name="Hinhanh_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Hinhanh" />
+    <xs:unique name="Thongtinnhanvien_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Thongtinnhanvien" />
       <xs:field xpath="mstns:Maso" />
     </xs:unique>
     <xs:unique name="Thongtincongviec_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Thongtincongviec" />
       <xs:field xpath="mstns:RefKey" />
     </xs:unique>
-    <xs:unique name="Thongtinnhanvien_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Thongtinnhanvien" />
+    <xs:unique name="Hinhanh_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hinhanh" />
       <xs:field xpath="mstns:Maso" />
     </xs:unique>
   </xs:element>

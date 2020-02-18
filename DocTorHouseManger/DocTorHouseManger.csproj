@@ -138,9 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="configMNG.cs" />
-    <Compile Include="dsnv_dbDataSet.cs">
-      <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="dsnv_dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +192,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="dsnv_dbDataSet.xsc">
       <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
     </None>
@@ -218,11 +216,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />

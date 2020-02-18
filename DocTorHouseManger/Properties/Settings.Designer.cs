@@ -26,21 +26,11 @@ namespace DocTorHouseManger.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\dsnv_db.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\Database\\Quanlynhanvien\\dsnv_db.m" +
+            "db")]
         public string dsnv_dbConnectionString {
             get {
                 return ((string)(this["dsnv_dbConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\Database\\Quanlynhanvien\\dsnv_db.m" +
-            "db")]
-        public string dsnv_dbConnectionString1 {
-            get {
-                return ((string)(this["dsnv_dbConnectionString1"]));
             }
         }
     }

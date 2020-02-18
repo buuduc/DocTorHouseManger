@@ -83,19 +83,19 @@ namespace DocTorHouseManger
         {
             get
             {
-                return config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString1"].ConnectionString;
+                return config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString"].ConnectionString;
             }
             set
             {
-                config.ConnectionStrings.ConnectionStrings.Remove("DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString1");
-                config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString1", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value + @"\Quanlynhanvien\dsnv_db.mdb"));
-                config.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection("connectionStrings");
-                //config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString1"].ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value+ @"\Quanlynhanvien\dsnv_db.mdb";
+                //config.ConnectionStrings.ConnectionStrings.Remove("DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString");
+                //config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value + @"\Quanlynhanvien\dsnv_db.mdb"));
+                //config.Save(ConfigurationSaveMode.Modified);
+                //ConfigurationManager.RefreshSection("connectionStrings");
+                config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString"].ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value+ @"\Quanlynhanvien\dsnv_db.mdb";
 
                 ////config.AppSettings.Settings["UserId"].Value = "myUserId";
-                //config.Save(ConfigurationSaveMode.Full);
-                //ConfigurationManager.RefreshSection("connectionStrings");
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("connectionStrings");
 
 
             }
