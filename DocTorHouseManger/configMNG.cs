@@ -30,6 +30,7 @@ namespace DocTorHouseManger
             {
                 try
                 {
+                    filepatch = cout.Substring(0, cout.Length - @"\Quanlynhanvien\dsnv_db.mdb".Length)+"/";
                     var GG = new GuiChinh();
                     GG.ShowDialog();
 
@@ -91,9 +92,8 @@ namespace DocTorHouseManger
                 //config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings("DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value + @"\Quanlynhanvien\dsnv_db.mdb"));
                 //config.Save(ConfigurationSaveMode.Modified);
                 //ConfigurationManager.RefreshSection("connectionStrings");
-                config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString"].ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value+ @"\Quanlynhanvien\dsnv_db.mdb";
-
                 ////config.AppSettings.Settings["UserId"].Value = "myUserId";
+                config.ConnectionStrings.ConnectionStrings["DocTorHouseManger.Properties.Settings.dsnv_dbConnectionString"].ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + @value+ @"\Quanlynhanvien\dsnv_db.mdb";
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("connectionStrings");
 

@@ -60,6 +60,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.danhSachNhanVienGridControl = new DevExpress.XtraGrid.GridControl();
+            this.danhSachNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsnv_dbDataSet = new DocTorHouseManger.dsnv_dbDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSTT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,7 +79,6 @@
             this.colLoaiHopDong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.danhSachNhanVienGridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.danhSachNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colChiNhanhNganHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -168,11 +168,11 @@
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsnv_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl1)).BeginInit();
@@ -441,6 +441,11 @@
             this.danhSachNhanVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // danhSachNhanVienBindingSource
+            // 
+            this.danhSachNhanVienBindingSource.DataMember = "DanhSachNhanVien";
+            this.danhSachNhanVienBindingSource.DataSource = this.dsnv_dbDataSet;
+            // 
             // dsnv_dbDataSet
             // 
             this.dsnv_dbDataSet.DataSetName = "dsnv_dbDataSet";
@@ -600,11 +605,6 @@
             this.danhSachNhanVienGridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
-            // danhSachNhanVienBindingSource
-            // 
-            this.danhSachNhanVienBindingSource.DataMember = "DanhSachNhanVien";
-            this.danhSachNhanVienBindingSource.DataSource = this.dsnv_dbDataSet;
-            // 
             // gridView3
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -631,6 +631,7 @@
             // 
             // colChiNhanhNganHang
             // 
+            this.colChiNhanhNganHang.Caption = "Chi Nhánh";
             this.colChiNhanhNganHang.FieldName = "ChiNhanhNganHang";
             this.colChiNhanhNganHang.Name = "colChiNhanhNganHang";
             this.colChiNhanhNganHang.Visible = true;
@@ -638,6 +639,7 @@
             // 
             // colCMND
             // 
+            this.colCMND.Caption = "Số CMND";
             this.colCMND.FieldName = "CMND";
             this.colCMND.Name = "colCMND";
             this.colCMND.Visible = true;
@@ -645,6 +647,7 @@
             // 
             // colDanToc
             // 
+            this.colDanToc.Caption = "Dân Tộc";
             this.colDanToc.FieldName = "DanToc";
             this.colDanToc.Name = "colDanToc";
             this.colDanToc.Visible = true;
@@ -659,6 +662,7 @@
             // 
             // colGioiTinh1
             // 
+            this.colGioiTinh1.Caption = "Giới Tính";
             this.colGioiTinh1.FieldName = "GioiTinh";
             this.colGioiTinh1.Name = "colGioiTinh1";
             this.colGioiTinh1.Visible = true;
@@ -666,6 +670,7 @@
             // 
             // colHoTen2
             // 
+            this.colHoTen2.Caption = "Họ Tên";
             this.colHoTen2.FieldName = "HoTen";
             this.colHoTen2.Name = "colHoTen2";
             this.colHoTen2.Visible = true;
@@ -673,6 +678,7 @@
             // 
             // colMaNhanVien2
             // 
+            this.colMaNhanVien2.Caption = "Mã Nhân Viên";
             this.colMaNhanVien2.FieldName = "MaNhanVien";
             this.colMaNhanVien2.Name = "colMaNhanVien2";
             this.colMaNhanVien2.Visible = true;
@@ -680,6 +686,7 @@
             // 
             // colNoiCapCMND
             // 
+            this.colNoiCapCMND.Caption = "Nơi Cấp";
             this.colNoiCapCMND.FieldName = "NoiCapCMND";
             this.colNoiCapCMND.Name = "colNoiCapCMND";
             this.colNoiCapCMND.Visible = true;
@@ -687,6 +694,7 @@
             // 
             // colNgaySinh1
             // 
+            this.colNgaySinh1.Caption = "Ngày Sinh";
             this.colNgaySinh1.FieldName = "NgaySinh";
             this.colNgaySinh1.Name = "colNgaySinh1";
             this.colNgaySinh1.Visible = true;
@@ -694,6 +702,7 @@
             // 
             // colNoiSinh
             // 
+            this.colNoiSinh.Caption = "Nơi Sinh";
             this.colNoiSinh.FieldName = "NoiSinh";
             this.colNoiSinh.Name = "colNoiSinh";
             this.colNoiSinh.Visible = true;
@@ -708,6 +717,7 @@
             // 
             // colTamTru
             // 
+            this.colTamTru.Caption = "Tạm Trú";
             this.colTamTru.FieldName = "TamTru";
             this.colTamTru.Name = "colTamTru";
             this.colTamTru.Visible = true;
@@ -715,6 +725,7 @@
             // 
             // colTonGiao
             // 
+            this.colTonGiao.Caption = "Tôn Giáo";
             this.colTonGiao.FieldName = "TonGiao";
             this.colTonGiao.Name = "colTonGiao";
             this.colTonGiao.Visible = true;
@@ -722,6 +733,7 @@
             // 
             // colTenNganHang
             // 
+            this.colTenNganHang.Caption = "Tên Ngân Hàng";
             this.colTenNganHang.FieldName = "TenNganHang";
             this.colTenNganHang.Name = "colTenNganHang";
             this.colTenNganHang.Visible = true;
@@ -729,6 +741,7 @@
             // 
             // colThuongTru
             // 
+            this.colThuongTru.Caption = "Thường Trú";
             this.colThuongTru.FieldName = "ThuongTru";
             this.colThuongTru.Name = "colThuongTru";
             this.colThuongTru.Visible = true;
@@ -736,6 +749,7 @@
             // 
             // colTK_NganHang
             // 
+            this.colTK_NganHang.Caption = "TK Ngân Hàng";
             this.colTK_NganHang.FieldName = "TK_NganHang";
             this.colTK_NganHang.Name = "colTK_NganHang";
             this.colTK_NganHang.Visible = true;
@@ -743,6 +757,7 @@
             // 
             // colSDT
             // 
+            this.colSDT.Caption = "SĐT";
             this.colSDT.FieldName = "SDT";
             this.colSDT.Name = "colSDT";
             this.colSDT.Visible = true;
@@ -750,6 +765,7 @@
             // 
             // colNgayCapCMND
             // 
+            this.colNgayCapCMND.Caption = "Ngày Cấp";
             this.colNgayCapCMND.FieldName = "NgayCapCMND";
             this.colNgayCapCMND.Name = "colNgayCapCMND";
             this.colNgayCapCMND.Visible = true;
@@ -798,6 +814,7 @@
             // 
             // colMaNhanVien1
             // 
+            this.colMaNhanVien1.Caption = "Mã Nhân Viên";
             this.colMaNhanVien1.FieldName = "MaNhanVien";
             this.colMaNhanVien1.Name = "colMaNhanVien1";
             this.colMaNhanVien1.Visible = true;
@@ -805,6 +822,7 @@
             // 
             // colDonViCongTac1
             // 
+            this.colDonViCongTac1.Caption = "Đơn Vị Công Tác";
             this.colDonViCongTac1.FieldName = "DonViCongTac";
             this.colDonViCongTac1.Name = "colDonViCongTac1";
             this.colDonViCongTac1.Visible = true;
@@ -812,6 +830,7 @@
             // 
             // colLoaiHopDong1
             // 
+            this.colLoaiHopDong1.Caption = "Loại Hợp Đồng";
             this.colLoaiHopDong1.FieldName = "LoaiHopDong";
             this.colLoaiHopDong1.Name = "colLoaiHopDong1";
             this.colLoaiHopDong1.Visible = true;
@@ -819,6 +838,7 @@
             // 
             // colHoTen1
             // 
+            this.colHoTen1.Caption = "Họ Tên";
             this.colHoTen1.FieldName = "HoTen";
             this.colHoTen1.Name = "colHoTen1";
             this.colHoTen1.Visible = true;
@@ -826,6 +846,7 @@
             // 
             // colGhichu
             // 
+            this.colGhichu.Caption = "Ghi Chú";
             this.colGhichu.FieldName = "Ghichu";
             this.colGhichu.Name = "colGhichu";
             this.colGhichu.Visible = true;
@@ -833,6 +854,7 @@
             // 
             // colNgayChinhThuc1
             // 
+            this.colNgayChinhThuc1.Caption = "Ngày Chính Thức";
             this.colNgayChinhThuc1.FieldName = "NgayChinhThuc";
             this.colNgayChinhThuc1.Name = "colNgayChinhThuc1";
             this.colNgayChinhThuc1.Visible = true;
@@ -840,6 +862,7 @@
             // 
             // colNgayThuViec1
             // 
+            this.colNgayThuViec1.Caption = "Ngày Thử Việc";
             this.colNgayThuViec1.FieldName = "NgayThuViec";
             this.colNgayThuViec1.Name = "colNgayThuViec1";
             this.colNgayThuViec1.Visible = true;
@@ -847,6 +870,7 @@
             // 
             // colNoiDaoTao1
             // 
+            this.colNoiDaoTao1.Caption = "Nơi Đào Tạo";
             this.colNoiDaoTao1.FieldName = "NoiDaoTao";
             this.colNoiDaoTao1.Name = "colNoiDaoTao1";
             this.colNoiDaoTao1.Visible = true;
@@ -861,6 +885,7 @@
             // 
             // colTrangThai1
             // 
+            this.colTrangThai1.Caption = "Trạng Thái";
             this.colTrangThai1.FieldName = "TrangThai";
             this.colTrangThai1.Name = "colTrangThai1";
             this.colTrangThai1.Visible = true;
@@ -868,6 +893,7 @@
             // 
             // colTrinhDoDaoTao1
             // 
+            this.colTrinhDoDaoTao1.Caption = "Trình Độ";
             this.colTrinhDoDaoTao1.FieldName = "TrinhDoDaoTao";
             this.colTrinhDoDaoTao1.Name = "colTrinhDoDaoTao1";
             this.colTrinhDoDaoTao1.Visible = true;
@@ -875,6 +901,7 @@
             // 
             // colViTriCongViec1
             // 
+            this.colViTriCongViec1.Caption = "Vị Trí Công Việc";
             this.colViTriCongViec1.FieldName = "ViTriCongViec";
             this.colViTriCongViec1.Name = "colViTriCongViec1";
             this.colViTriCongViec1.Visible = true;
@@ -1317,11 +1344,11 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsnv_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNhanVienGridControl1)).EndInit();
