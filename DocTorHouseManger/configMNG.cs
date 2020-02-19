@@ -24,7 +24,8 @@ namespace DocTorHouseManger
                 //MessageBox.Show(cout);
                 if (!System.IO.File.Exists(cout))
                 {
-                    Checkking();
+                MessageBox.Show("Không tìm thấy database ! \n Hãy chọn vị trí hiện tại của file Database !","thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Checkking();
                 }
                 else
                 {

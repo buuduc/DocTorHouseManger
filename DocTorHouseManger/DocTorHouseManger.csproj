@@ -110,6 +110,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -137,6 +140,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeTableName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeTableName.Designer.cs">
+      <DependentUpon>ChangeTableName.cs</DependentUpon>
+    </Compile>
     <Compile Include="configMNG.cs" />
     <Compile Include="dsnv_dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -181,6 +190,9 @@
     <Compile Include="CustomConTrol.Designer.cs">
       <DependentUpon>CustomConTrol.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangeTableName.resx">
+      <DependentUpon>ChangeTableName.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomConTrol.resx">
       <DependentUpon>CustomConTrol.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +259,9 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

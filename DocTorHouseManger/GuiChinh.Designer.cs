@@ -240,6 +240,7 @@
             this.DoiTen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DoiTen.ImageOptions.Image")));
             this.DoiTen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DoiTen.ImageOptions.LargeImage")));
             this.DoiTen.Name = "DoiTen";
+            this.DoiTen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DoiTen_ItemClick);
             // 
             // ribbonGalleryBarItem1
             // 

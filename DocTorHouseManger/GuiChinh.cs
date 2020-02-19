@@ -186,12 +186,15 @@ namespace DocTorHouseManger
 
         private void ThemBangBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTableName addTableName = new AddTableName();
-            addTableName.ShowDialog();
-            if (addTableName.enforce)
+            using (AddTableName addTableName = new AddTableName())
             {
-            AddTabPage(addTableName.TableName);
 
+                addTableName.ShowDialog();
+                if (addTableName.enforce)
+                {
+                AddTabPage(addTableName.TableName);
+
+                }
             }
         }
 
@@ -208,5 +211,18 @@ namespace DocTorHouseManger
             }
         }
 
+        private void DoiTen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (ChangeTableName changeTableName = new ChangeTableName())
+            {
+                changeTableName.TableName = xtraTabControl1.SelectedTabPage.Text;
+                changeTableName.ShowDialog();
+                if (changeTableName.enforce)
+                {
+                    xtraTabControl1.SelectedTabPage.Text = changeTableName.TableName;
+
+                }
+            }
+        }
     }
 }

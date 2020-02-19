@@ -104,3 +104,7 @@ C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.csproj.CopyComplete
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.exe
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.pdb
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.ChangeTableName.resources
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.CustomConTrol.resources
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.AddTableName.resources
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Release\DocTorHouseManger.csprojAssemblyReference.cache
