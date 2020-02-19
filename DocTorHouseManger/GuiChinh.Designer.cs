@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuiChinh));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.DetailButton = new DevExpress.XtraBars.BarButtonItem();
             this.DelPersonButton = new DevExpress.XtraBars.BarButtonItem();
@@ -182,11 +182,11 @@
             // 
             // DetailButton
             // 
-            this.DetailButton.Caption = "Sửa";
+            this.DetailButton.Caption = "Xem/Sửa";
             this.DetailButton.Id = 1;
             this.DetailButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DetailButton.ImageOptions.Image")));
             this.DetailButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DetailButton.ImageOptions.LargeImage")));
-            this.DetailButton.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailButton.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailButton.ItemAppearance.Hovered.Options.UseFont = true;
             this.DetailButton.Name = "DetailButton";
             this.DetailButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DetailButton_ItemClick);
@@ -197,8 +197,8 @@
             this.DelPersonButton.Id = 2;
             this.DelPersonButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DelPersonButton.ImageOptions.Image")));
             this.DelPersonButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DelPersonButton.ImageOptions.LargeImage")));
-            this.DelPersonButton.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DelPersonButton.ItemAppearance.Normal.Options.UseFont = true;
+            this.DelPersonButton.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelPersonButton.ItemAppearance.Hovered.Options.UseFont = true;
             this.DelPersonButton.Name = "DelPersonButton";
             this.DelPersonButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DelPersonButton_ItemClick);
             // 
@@ -208,6 +208,8 @@
             this.RefreshButton.Id = 4;
             this.RefreshButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RefreshButton.ImageOptions.Image")));
             this.RefreshButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.ImageOptions.LargeImage")));
+            this.RefreshButton.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshButton.ItemAppearance.Hovered.Options.UseFont = true;
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshButton_ItemClick);
             // 
@@ -217,6 +219,8 @@
             this.AddPersonButton.Id = 5;
             this.AddPersonButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AddPersonButton.ImageOptions.Image")));
             this.AddPersonButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("AddPersonButton.ImageOptions.LargeImage")));
+            this.AddPersonButton.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPersonButton.ItemAppearance.Hovered.Options.UseFont = true;
             this.AddPersonButton.Name = "AddPersonButton";
             this.AddPersonButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddPersonButton_ItemClick);
             // 
@@ -387,6 +391,7 @@
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
             // xtraTabPage1
@@ -404,9 +409,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.danhSachNhanVienGridControl.DataSource = this.danhSachNhanVienBindingSource;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.danhSachNhanVienGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.danhSachNhanVienGridControl.Location = new System.Drawing.Point(-1, 0);
             this.danhSachNhanVienGridControl.MainView = this.gridView1;
             this.danhSachNhanVienGridControl.MenuManager = this.ribbonControl1;

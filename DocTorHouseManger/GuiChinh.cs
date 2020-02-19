@@ -12,7 +12,7 @@ namespace DocTorHouseManger
         public GuiChinh()
         {
             InitializeComponent();
-            AddTabPage("Test");
+            AddTabPage("Chi Tiết");
             xtraTabControl1.TabIndex = 3;
 
         }
@@ -23,7 +23,7 @@ namespace DocTorHouseManger
         {
             // TODO: This line of code loads data into the 'dsnv_dbDataSet.DanhSachNhanVien' table. You can move, or remove it, as needed.
             this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
-
+            danhSachNhanVienBindingNavigator.BindingSource = danhSachNhanVienBindingSource;
 
         }
 
@@ -48,14 +48,24 @@ namespace DocTorHouseManger
 
         private void RefreshButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
+            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien) ;
             this.CheckIn = false;
+            
+            foreach (DevExpress.XtraTab.XtraTabPage tabpage in xtraTabControl1.TabPages)
+            {
+                var a = tabpage.Controls[0];
+                if (tabpage.Controls[0] as GridControl == null)
+                {
+                    CustomConTrol k = tabpage.Controls[0] as CustomConTrol;
+                    k.Refresh();
+                }
+            }
         }
 
         private void DetailButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Detail_InformationForm DetailForm = new Detail_InformationForm();
-            DetailForm.Position = danhSachNhanVienBindingSource.Position;
+            DetailForm.Position = danhSachNhanVienBindingNavigator.BindingSource.Position;
             DetailForm.truyenData = new Detail_InformationForm.Truyenchocha(UpdateData);
             DetailForm.ShowDialog();
             danhSachNhanVienBindingSource.Position = DetailForm.Position;
@@ -81,7 +91,7 @@ namespace DocTorHouseManger
         {
             Dele_InformationForm DelForm = new Dele_InformationForm();
             //DelForm.Position = danhSachNhanVienBindingSource.Position;
-            DelForm.Position = danhSachNhanVienBindingSource.Position;
+            DelForm.Position = danhSachNhanVienBindingNavigator.BindingSource.Position;
             DelForm.truyenData = new Dele_InformationForm.Truyenchocha(UpdateData);
             DelForm.ShowDialog();
             DelForm.Close();
@@ -94,7 +104,7 @@ namespace DocTorHouseManger
 
         private void ExportEcelBTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GetView();
+           
             SaveFileDialog saveFileDialog1 = new SaveFileDialog(){Filter = "XLSX Image|*.xlsx",Title = "Lưu file Excel"};
             if (saveFileDialog1.ShowDialog()==DialogResult.OK)
             {
@@ -111,6 +121,7 @@ namespace DocTorHouseManger
             //CurrentGrid = a as GridControl;
             //CurrentGrid.ExportToXlsx("test.xlsx");
             //System.Diagnostics.Process.Start("test.xlsx");
+            CurrentGrid.ShowPrintPreview();
         }
         static GridControl CurrentGrid;
         private void GetView()
@@ -127,7 +138,7 @@ namespace DocTorHouseManger
        
         private void PDFbTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GetView();
+            
             SaveFileDialog saveFileDialog1 = new SaveFileDialog() { Filter = "PDF Image|*.pdf", Title = "Lưu file pdf" };
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -163,9 +174,8 @@ namespace DocTorHouseManger
 
             var a = Table.Controls[0];
             GridControl CurentControl = a as GridControl;
-            //danhSachNhanVienBindingNavigator.DataBindings =
-            //CurentControl.DataSource = danhSachNhanVienBindingSource;
-            
+            danhSachNhanVienBindingNavigator.BindingSource = (BindingSource)CurentControl.DataSource;
+
         }
 
         private void xtraTabControl1_CloseButtonClick(object sender, EventArgs e)
@@ -184,5 +194,19 @@ namespace DocTorHouseManger
 
             }
         }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            GetView();
+            if (xtraTabControl1.SelectedTabPage.Controls[0] as GridControl == null)
+            {
+                danhSachNhanVienBindingNavigator.BindingSource = (BindingSource)CurrentGrid.DataSource;
+            }
+            else
+            {
+                danhSachNhanVienBindingNavigator.BindingSource = danhSachNhanVienBindingSource;
+            }
+        }
+
     }
 }

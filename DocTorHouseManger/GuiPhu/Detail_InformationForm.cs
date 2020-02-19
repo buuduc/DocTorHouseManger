@@ -110,15 +110,6 @@ namespace DocTorHouseManger
             }
             hinhAnhLinkLabel.Text = "Hinhanh/" + maso + ".png";
         }
-
-
-
-
-        private void hinhAnhLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(FilePatch+hinhAnhLinkLabel.Text);
-        }
-
         private void hinhAnhLinkLabel_TextChanged(object sender, EventArgs e)
         {
             if (hinhAnhLinkLabel.Text != "" & System.IO.File.Exists(FilePatch+ hinhAnhLinkLabel.Text) == true)
@@ -154,6 +145,19 @@ namespace DocTorHouseManger
             
         }
 
-       
+        private void saoChépĐịaChỉToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(FilePatch + hinhAnhLinkLabel.Text);
+        }
+
+        private void mởĐịaChỉToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(FilePatch+"Hinhanh");
+        }
+
+        private void hinhAnhLinkLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            System.Diagnostics.Process.Start(FilePatch + hinhAnhLinkLabel.Text);
+        }
     }
 }

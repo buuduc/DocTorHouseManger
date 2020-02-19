@@ -114,6 +114,9 @@
             this.sTTSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.hoTenLabel2 = new System.Windows.Forms.Label();
             this.hinhAnhLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saoChépĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mởĐịaChỉToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             maNhanVienLabel = new System.Windows.Forms.Label();
             sTTLabel = new System.Windows.Forms.Label();
             gioiTinhLabel = new System.Windows.Forms.Label();
@@ -188,6 +191,7 @@
             this.danhSachNhanVienBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maNhanVienTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTTSpinEdit.Properties)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // maNhanVienLabel
@@ -1002,7 +1006,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1093,6 +1096,7 @@
             // 
             // hinhAnhLinkLabel
             // 
+            this.hinhAnhLinkLabel.ContextMenuStrip = this.contextMenuStrip1;
             this.hinhAnhLinkLabel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.danhSachNhanVienBindingSource, "HinhAnh", true));
             this.hinhAnhLinkLabel.Location = new System.Drawing.Point(486, 387);
             this.hinhAnhLinkLabel.Name = "hinhAnhLinkLabel";
@@ -1100,8 +1104,30 @@
             this.hinhAnhLinkLabel.TabIndex = 39;
             this.hinhAnhLinkLabel.TabStop = true;
             this.hinhAnhLinkLabel.Text = "linkLabel1";
-            this.hinhAnhLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hinhAnhLinkLabel_LinkClicked);
             this.hinhAnhLinkLabel.TextChanged += new System.EventHandler(this.hinhAnhLinkLabel_TextChanged);
+            this.hinhAnhLinkLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.hinhAnhLinkLabel_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saoChépĐịaChỉToolStripMenuItem,
+            this.mởĐịaChỉToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 48);
+            // 
+            // saoChépĐịaChỉToolStripMenuItem
+            // 
+            this.saoChépĐịaChỉToolStripMenuItem.Name = "saoChépĐịaChỉToolStripMenuItem";
+            this.saoChépĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.saoChépĐịaChỉToolStripMenuItem.Text = "Sao chép đường dẫn";
+            this.saoChépĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.saoChépĐịaChỉToolStripMenuItem_Click);
+            // 
+            // mởĐịaChỉToolStripMenuItem
+            // 
+            this.mởĐịaChỉToolStripMenuItem.Name = "mởĐịaChỉToolStripMenuItem";
+            this.mởĐịaChỉToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.mởĐịaChỉToolStripMenuItem.Text = "Mở đường dẫn";
+            this.mởĐịaChỉToolStripMenuItem.Click += new System.EventHandler(this.mởĐịaChỉToolStripMenuItem_Click);
             // 
             // Detail_InformationForm
             // 
@@ -1170,6 +1196,7 @@
             this.danhSachNhanVienBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maNhanVienTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTTSpinEdit.Properties)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1231,5 +1258,8 @@
         private DevExpress.XtraEditors.DateEdit ngayCapCMNDDateEdit;
         private DevExpress.XtraEditors.TextEdit sDTTextEdit;
         private System.Windows.Forms.LinkLabel hinhAnhLinkLabel;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem saoChépĐịaChỉToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mởĐịaChỉToolStripMenuItem;
     }
 }

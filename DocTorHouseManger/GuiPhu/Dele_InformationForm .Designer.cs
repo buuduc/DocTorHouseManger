@@ -562,6 +562,7 @@
             this.trinhDoDaoTaoTextEdit.Name = "trinhDoDaoTaoTextEdit";
             this.trinhDoDaoTaoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.trinhDoDaoTaoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.trinhDoDaoTaoTextEdit.Properties.ReadOnly = true;
             this.trinhDoDaoTaoTextEdit.Size = new System.Drawing.Size(269, 24);
             this.trinhDoDaoTaoTextEdit.TabIndex = 19;
             // 
@@ -582,6 +583,7 @@
             this.noiDaoTaoTextEdit.Name = "noiDaoTaoTextEdit";
             this.noiDaoTaoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.noiDaoTaoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.noiDaoTaoTextEdit.Properties.ReadOnly = true;
             this.noiDaoTaoTextEdit.Size = new System.Drawing.Size(269, 24);
             this.noiDaoTaoTextEdit.TabIndex = 21;
             // 
@@ -592,6 +594,7 @@
             this.chuyenNganhTextEdit.Name = "chuyenNganhTextEdit";
             this.chuyenNganhTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.chuyenNganhTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.chuyenNganhTextEdit.Properties.ReadOnly = true;
             this.chuyenNganhTextEdit.Size = new System.Drawing.Size(269, 24);
             this.chuyenNganhTextEdit.TabIndex = 17;
             // 
@@ -602,6 +605,7 @@
             this.tonGiaoTextEdit.Name = "tonGiaoTextEdit";
             this.tonGiaoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tonGiaoTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tonGiaoTextEdit.Properties.ReadOnly = true;
             this.tonGiaoTextEdit.Size = new System.Drawing.Size(269, 24);
             this.tonGiaoTextEdit.TabIndex = 15;
             // 
@@ -612,6 +616,7 @@
             this.danTocTextEdit.Name = "danTocTextEdit";
             this.danTocTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.danTocTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.danTocTextEdit.Properties.ReadOnly = true;
             this.danTocTextEdit.Size = new System.Drawing.Size(269, 24);
             this.danTocTextEdit.TabIndex = 13;
             // 
@@ -622,6 +627,7 @@
             this.tamTruTextEdit.Name = "tamTruTextEdit";
             this.tamTruTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tamTruTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tamTruTextEdit.Properties.ReadOnly = true;
             this.tamTruTextEdit.Size = new System.Drawing.Size(269, 24);
             this.tamTruTextEdit.TabIndex = 11;
             // 
@@ -632,6 +638,7 @@
             this.thuongTruTextEdit.Name = "thuongTruTextEdit";
             this.thuongTruTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.thuongTruTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.thuongTruTextEdit.Properties.ReadOnly = true;
             this.thuongTruTextEdit.Size = new System.Drawing.Size(269, 24);
             this.thuongTruTextEdit.TabIndex = 9;
             // 
@@ -642,6 +649,7 @@
             this.hoTenTextEdit1.Name = "hoTenTextEdit1";
             this.hoTenTextEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.hoTenTextEdit1.Properties.Appearance.Options.UseFont = true;
+            this.hoTenTextEdit1.Properties.ReadOnly = true;
             this.hoTenTextEdit1.Size = new System.Drawing.Size(269, 24);
             this.hoTenTextEdit1.TabIndex = 7;
             // 
@@ -652,6 +660,7 @@
             this.noiSinhTextEdit.Name = "noiSinhTextEdit";
             this.noiSinhTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.noiSinhTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.noiSinhTextEdit.Properties.ReadOnly = true;
             this.noiSinhTextEdit.Size = new System.Drawing.Size(269, 24);
             this.noiSinhTextEdit.TabIndex = 5;
             // 
@@ -667,6 +676,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaySinhDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngaySinhDateEdit.Properties.ReadOnly = true;
             this.ngaySinhDateEdit.Size = new System.Drawing.Size(269, 24);
             this.ngaySinhDateEdit.TabIndex = 3;
             // 
@@ -677,6 +687,7 @@
             this.gioiTinhTextEdit.Name = "gioiTinhTextEdit";
             this.gioiTinhTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.gioiTinhTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.gioiTinhTextEdit.Properties.ReadOnly = true;
             this.gioiTinhTextEdit.Size = new System.Drawing.Size(269, 24);
             this.gioiTinhTextEdit.TabIndex = 1;
             // 
@@ -719,6 +730,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.noiCapCMNDDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.noiCapCMNDDateEdit.Properties.ReadOnly = true;
             this.noiCapCMNDDateEdit.Size = new System.Drawing.Size(229, 24);
             this.noiCapCMNDDateEdit.TabIndex = 24;
             // 
@@ -734,6 +746,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngayCapCMNDDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngayCapCMNDDateEdit.Properties.ReadOnly = true;
             this.ngayCapCMNDDateEdit.Size = new System.Drawing.Size(229, 24);
             this.ngayCapCMNDDateEdit.TabIndex = 23;
             // 
@@ -744,6 +757,7 @@
             this.sDTTextEdit.Name = "sDTTextEdit";
             this.sDTTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.sDTTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.sDTTextEdit.Properties.ReadOnly = true;
             this.sDTTextEdit.Size = new System.Drawing.Size(229, 24);
             this.sDTTextEdit.TabIndex = 22;
             // 
@@ -754,6 +768,7 @@
             this.honNhanTextEdit.Name = "honNhanTextEdit";
             this.honNhanTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.honNhanTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.honNhanTextEdit.Properties.ReadOnly = true;
             this.honNhanTextEdit.Size = new System.Drawing.Size(229, 24);
             this.honNhanTextEdit.TabIndex = 21;
             // 
@@ -764,6 +779,7 @@
             this.emailTextEdit.Name = "emailTextEdit";
             this.emailTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.emailTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.emailTextEdit.Properties.ReadOnly = true;
             this.emailTextEdit.Size = new System.Drawing.Size(229, 24);
             this.emailTextEdit.TabIndex = 17;
             // 
@@ -774,6 +790,7 @@
             this.ghichuTextEdit.Name = "ghichuTextEdit";
             this.ghichuTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.ghichuTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.ghichuTextEdit.Properties.ReadOnly = true;
             this.ghichuTextEdit.Size = new System.Drawing.Size(229, 24);
             this.ghichuTextEdit.TabIndex = 13;
             // 
@@ -784,6 +801,7 @@
             this.chiNhanhNganHangTextEdit.Name = "chiNhanhNganHangTextEdit";
             this.chiNhanhNganHangTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.chiNhanhNganHangTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.chiNhanhNganHangTextEdit.Properties.ReadOnly = true;
             this.chiNhanhNganHangTextEdit.Size = new System.Drawing.Size(229, 24);
             this.chiNhanhNganHangTextEdit.TabIndex = 11;
             // 
@@ -794,6 +812,7 @@
             this.tenNganHangTextEdit.Name = "tenNganHangTextEdit";
             this.tenNganHangTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tenNganHangTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tenNganHangTextEdit.Properties.ReadOnly = true;
             this.tenNganHangTextEdit.Size = new System.Drawing.Size(229, 24);
             this.tenNganHangTextEdit.TabIndex = 9;
             // 
@@ -804,6 +823,7 @@
             this.tK_NganHangTextEdit.Name = "tK_NganHangTextEdit";
             this.tK_NganHangTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tK_NganHangTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.tK_NganHangTextEdit.Properties.ReadOnly = true;
             this.tK_NganHangTextEdit.Size = new System.Drawing.Size(229, 24);
             this.tK_NganHangTextEdit.TabIndex = 7;
             // 
@@ -814,6 +834,7 @@
             this.cMNDTextEdit.Name = "cMNDTextEdit";
             this.cMNDTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.cMNDTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.cMNDTextEdit.Properties.ReadOnly = true;
             this.cMNDTextEdit.Size = new System.Drawing.Size(229, 24);
             this.cMNDTextEdit.TabIndex = 1;
             // 
@@ -843,6 +864,7 @@
             this.trangThaiTextEdit.Name = "trangThaiTextEdit";
             this.trangThaiTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.trangThaiTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.trangThaiTextEdit.Properties.ReadOnly = true;
             this.trangThaiTextEdit.Size = new System.Drawing.Size(262, 24);
             this.trangThaiTextEdit.TabIndex = 11;
             // 
@@ -853,6 +875,7 @@
             this.loaiHopDongTextEdit.Name = "loaiHopDongTextEdit";
             this.loaiHopDongTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.loaiHopDongTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.loaiHopDongTextEdit.Properties.ReadOnly = true;
             this.loaiHopDongTextEdit.Size = new System.Drawing.Size(262, 24);
             this.loaiHopDongTextEdit.TabIndex = 9;
             // 
@@ -868,6 +891,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngayChinhThucDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngayChinhThucDateEdit.Properties.ReadOnly = true;
             this.ngayChinhThucDateEdit.Size = new System.Drawing.Size(262, 24);
             this.ngayChinhThucDateEdit.TabIndex = 7;
             // 
@@ -883,6 +907,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngayThuViecDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngayThuViecDateEdit.Properties.ReadOnly = true;
             this.ngayThuViecDateEdit.Size = new System.Drawing.Size(262, 24);
             this.ngayThuViecDateEdit.TabIndex = 5;
             // 
@@ -893,6 +918,7 @@
             this.donViCongTacTextEdit.Name = "donViCongTacTextEdit";
             this.donViCongTacTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.donViCongTacTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.donViCongTacTextEdit.Properties.ReadOnly = true;
             this.donViCongTacTextEdit.Size = new System.Drawing.Size(262, 24);
             this.donViCongTacTextEdit.TabIndex = 3;
             // 
@@ -903,6 +929,7 @@
             this.viTriCongViecTextEdit.Name = "viTriCongViecTextEdit";
             this.viTriCongViecTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.viTriCongViecTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.viTriCongViecTextEdit.Properties.ReadOnly = true;
             this.viTriCongViecTextEdit.Size = new System.Drawing.Size(262, 24);
             this.viTriCongViecTextEdit.TabIndex = 1;
             // 
@@ -1003,7 +1030,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1062,6 +1088,7 @@
             this.sTTSpinEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.sTTSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sTTSpinEdit.Properties.ReadOnly = true;
             this.sTTSpinEdit.Size = new System.Drawing.Size(100, 24);
             this.sTTSpinEdit.TabIndex = 37;
             // 

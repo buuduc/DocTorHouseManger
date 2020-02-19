@@ -16,7 +16,7 @@ namespace DocTorHouseManger
         public CustomConTrol()
         {
             InitializeComponent();
-            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
+            Refresh();
 
         }
 
@@ -26,6 +26,10 @@ namespace DocTorHouseManger
             this.danhSachNhanVienBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dsnv_dbDataSet);
 
+        }
+        public void Refresh()
+        {
+            this.danhSachNhanVienTableAdapter.Fill(this.dsnv_dbDataSet.DanhSachNhanVien);
         }
     }
 }

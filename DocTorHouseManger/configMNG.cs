@@ -17,29 +17,23 @@ namespace DocTorHouseManger
         }
         public static void Run()
         {
-           
-            string txt = ConnectionString;
-            int cuoi = txt.IndexOf("Data Source=");
-            string cout = txt.Substring(cuoi+ "Data Source=".Length);
-            MessageBox.Show(cout);
-            if (!System.IO.File.Exists(cout))
-            {
-                Checkking();
-            }
-            else
-            {
-                try
+            
+                string txt = ConnectionString;
+                int cuoi = txt.IndexOf("Data Source=");
+                string cout = txt.Substring(cuoi + "Data Source=".Length);
+                //MessageBox.Show(cout);
+                if (!System.IO.File.Exists(cout))
                 {
-                    filepatch = cout.Substring(0, cout.Length - @"\Quanlynhanvien\dsnv_db.mdb".Length)+"/";
+                    Checkking();
+                }
+                else
+                {
+                    filepatch = cout.Substring(0, cout.Length - @"\Quanlynhanvien\dsnv_db.mdb".Length) + "/";
                     Application.Run(new GuiChinh());
+                }
 
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString());
-                    throw;
-                }
-            }
+            
+            
 
         }
 

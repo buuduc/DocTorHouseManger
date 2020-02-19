@@ -211,3 +211,5 @@ C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\Do
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.pdb
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.csprojAssemblyReference.cache
 C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\bin\Debug\DocTorHouseManger.exe.config
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.CustomConTrol.resources
+C:\Users\buudu\Documents\GitHub\DocTorHouseManger\DocTorHouseManger\obj\Debug\DocTorHouseManger.AddTableName.resources
