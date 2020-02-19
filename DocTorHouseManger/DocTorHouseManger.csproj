@@ -143,6 +143,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AddTableName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTableName.Designer.cs">
+      <DependentUpon>AddTableName.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuiPhu\Dele_InformationForm .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomConTrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomConTrol.Designer.cs">
+      <DependentUpon>CustomConTrol.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomConTrol.resx">
+      <DependentUpon>CustomConTrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTableName.resx">
+      <DependentUpon>AddTableName.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GuiPhu\Dele_InformationForm .resx">
       <DependentUpon>Dele_InformationForm .cs</DependentUpon>
     </EmbeddedResource>
@@ -192,7 +210,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="dsnv_dbDataSet.xsc">
       <DependentUpon>dsnv_dbDataSet.xsd</DependentUpon>
     </None>

@@ -12,7 +12,9 @@ namespace DocTorHouseManger
         public GuiChinh()
         {
             InitializeComponent();
-            
+            AddTabPage("Test");
+            xtraTabControl1.TabIndex = 3;
+
         }
 
         private bool CheckIn = false;
@@ -115,6 +117,11 @@ namespace DocTorHouseManger
         {
             var a = xtraTabControl1.SelectedTabPage.Controls[0];
             CurrentGrid = a as GridControl;
+            if (CurrentGrid == null)
+            {
+                CustomConTrol CurentUsercontrol = a as CustomConTrol;
+                CurrentGrid = CurentUsercontrol.Controls[0] as GridControl;
+            }
         }
 
        
@@ -130,22 +137,34 @@ namespace DocTorHouseManger
             }
         }
 
-        private void AddTabPage()
+        private void AddTabPage(string text)
         {
-            DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage();
-            DevExpress.XtraGrid.GridControl gridctrl = new GridControl();
-            tabpage.Controls.Add(gridctrl);
-            gridctrl.Dock = DockStyle.Fill;
+            //DevExpress.XtraGrid.GridControl gridctrl = new GridControl();
+            //tabpage.Controls.Add(gridctrl);
+            //gridctrl.Dock = DockStyle.Fill;
 
-            GridView gridView1 = new GridView();
-            //GridColumn MaNhanViencol = gridView1.Columns["Mã Nhân Viên"];
-            //gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
-            //gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
-            gridctrl.MainView = gridView1;
-            gridctrl.DataSource = danhSachNhanVienBindingSource;
-            //gridView1.Columns
-            //gridView1.Columns.ca
+            //GridView gridView1 = new GridView();
+            ////GridColumn MaNhanViencol = gridView1.Columns["Mã Nhân Viên"];
+            ////gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
+            ////gridView1.Columns.Add(new GridColumn() { Caption = "Mã Nhân Viên" });
+            //gridctrl.MainView = gridView1;
+            //gridctrl.DataSource = danhSachNhanVienBindingSource;
+            ////gridView1.Columns
+            ////gridView1.Columns.ca
+            //xtraTabControl1.TabPages.Add(tabpage);
+            DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage();
+            tabpage.Text = text;
+            CustomConTrol Table = new CustomConTrol();
+            tabpage.Controls.Add(Table);
+            Table.Dock= System.Windows.Forms.DockStyle.Fill;
             xtraTabControl1.TabPages.Add(tabpage);
+
+
+
+            var a = Table.Controls[0];
+            GridControl CurentControl = a as GridControl;
+            //danhSachNhanVienBindingNavigator.DataBindings =
+            //CurentControl.DataSource = danhSachNhanVienBindingSource;
             
         }
 
@@ -153,6 +172,17 @@ namespace DocTorHouseManger
         {
             if (MessageBox.Show("Bạn có muốn đóng tab này ?", "EXIT", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 xtraTabControl1.TabPages.RemoveAt(xtraTabControl1.SelectedTabPageIndex);
+        }
+
+        private void ThemBangBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTableName addTableName = new AddTableName();
+            addTableName.ShowDialog();
+            if (addTableName.enforce)
+            {
+            AddTabPage(addTableName.TableName);
+
+            }
         }
     }
 }

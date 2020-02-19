@@ -31,8 +31,7 @@ namespace DocTorHouseManger
                 try
                 {
                     filepatch = cout.Substring(0, cout.Length - @"\Quanlynhanvien\dsnv_db.mdb".Length)+"/";
-                    var GG = new GuiChinh();
-                    GG.ShowDialog();
+                    Application.Run(new GuiChinh());
 
                 }
                 catch (Exception e)
@@ -61,9 +60,8 @@ namespace DocTorHouseManger
                     filepatch = @fbd.SelectedPath + "/";
                     ConnectionString = fbd.SelectedPath;
                     try
-                    {   
-                        var GG = new GuiChinh();
-                        GG.ShowDialog();
+                    {
+                        Application.Run(new GuiChinh());
 
                     }
                     catch (Exception e)

@@ -25,9 +25,9 @@ namespace DocTorHouseManger
             //config.Save(ConfigurationSaveMode.Modified, true);
             //ConfigurationManager.RefreshSection("connectionStrings");
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new GuiChinh());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+           
             configMNG.Run();
 
 
